@@ -1,4 +1,7 @@
+<div align="center">
+  
 [English](CONTRIBUTING.md) | [العربية](CONTRIBUTING.ar.md) | [Deutsch](CONTRIBUTING.de.md) | [Español](CONTRIBUTING.es.md) | [Français](CONTRIBUTING.fr.md)
+</div>  
 
 # Contributing
 
