@@ -1,6 +1,12 @@
+<div align="center">
+
+<img src="assets/logo.png" alt="ASM Reversing Lab logo" width="220">
+
 [English](README.md) | [العربية](README.ar.md) | [Deutsch](README.de.md) | [Español](README.es.md) | [Français](README.fr.md)
 
-# asm-reversing-lab
+# ASM Reversing Lab
+
+</div>
 
 A free, hands-on course that teaches **assembly language** and **reverse engineering** together.
 You learn to write x86 and x86-64 assembly, and to read the machine code that compilers

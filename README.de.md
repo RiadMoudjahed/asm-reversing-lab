@@ -1,7 +1,13 @@
-<!-- source: README.md @ sha256:327e8560dfa8 -->
+<!-- source: README.md @ sha256:f54fdc1a6476 -->
+<div align="center">
+
+<img src="assets/logo.png" alt="ASM Reversing Lab logo" width="220">
+
 [English](README.md) | [العربية](README.ar.md) | [Deutsch](README.de.md) | [Español](README.es.md) | [Français](README.fr.md)
 
-# asm-reversing-lab
+# ASM Reversing Lab
+
+</div>
 
 Ein kostenloser, praxisorientierter Kurs, der **Assemblersprache** und **Reverse Engineering** gemeinsam vermittelt. Sie lernen, x86- und x86-64-Assembler zu schreiben und den Maschinencode zu lesen, den Compiler erzeugen, unter Linux und unter Windows.
 

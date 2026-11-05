@@ -1,9 +1,15 @@
-<!-- source: README.md @ sha256:327e8560dfa8 -->
+<!-- source: README.md @ sha256:f54fdc1a6476 -->
+<div align="center">
+
+<img src="assets/logo.png" alt="ASM Reversing Lab logo" width="220">
+
 [English](README.md) | [العربية](README.ar.md) | [Deutsch](README.de.md) | [Español](README.es.md) | [Français](README.fr.md)
 
-<div dir="rtl">
+# ASM Reversing Lab
 
-# asm-reversing-lab
+</div>
+
+<div dir="rtl">
 
 دورة مجانية وعملية تعلّمك **لغة التجميع** و**الهندسة العكسية** معاً. ستتعلم كتابة شيفرة التجميع لمعماريتي x86 وx86-64، وقراءة شيفرة الآلة التي تنتجها المترجمات، على نظامي Linux وWindows.
 

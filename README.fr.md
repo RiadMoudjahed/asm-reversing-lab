@@ -1,7 +1,13 @@
-<!-- source: README.md @ sha256:327e8560dfa8 -->
+<!-- source: README.md @ sha256:f54fdc1a6476 -->
+<div align="center">
+
+<img src="assets/logo.png" alt="ASM Reversing Lab logo" width="220">
+
 [English](README.md) | [العربية](README.ar.md) | [Deutsch](README.de.md) | [Español](README.es.md) | [Français](README.fr.md)
 
-# asm-reversing-lab
+# ASM Reversing Lab
+
+</div>
 
 Un cours gratuit et pratique qui enseigne ensemble le **langage d'assemblage** et la **rétro-ingénierie**. Vous apprendrez à écrire de l'assembleur x86 et x86-64 et à lire le code machine produit par les compilateurs, sous Linux comme sous Windows.
 
