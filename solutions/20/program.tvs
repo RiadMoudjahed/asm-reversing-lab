@@ -1,0 +1,23 @@
+; Stores the first 12 Fibonacci numbers in memory, then prints them from the last to the first.
+        movi r0, 1
+        movi r1, 1
+        movi r2, 0
+        movi r3, 1
+        movi r5, 12
+fill:   stb  [r2], r0
+        mov  r4, r0
+        add  r4, r1
+        mov  r0, r1
+        mov  r1, r4
+        add  r2, r3
+        cmp  r2, r5
+        jnz  fill
+        call show
+        halt
+show:   movi r2, 12
+back:   sub  r2, r3
+        ldb  r4, [r2]
+        out  r4
+        cmp  r2, r6
+        jnz  back
+        ret

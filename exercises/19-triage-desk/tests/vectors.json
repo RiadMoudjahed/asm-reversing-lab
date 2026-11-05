@@ -1,0 +1,387 @@
+[
+ {
+  "name": "sample record: service name",
+  "input": "64 0d13a264a9cb256890f41a799f9c9c",
+  "expected": "13 57696e557064537663486f737400 ok"
+ },
+ {
+  "name": "sample record: service name, exact room",
+  "input": "14 0d13a264a9cb256890f41a799f9c9c",
+  "expected": "13 57696e557064537663486f737400 ok"
+ },
+ {
+  "name": "sample record: service name, one byte short",
+  "input": "13 0d13a264a9cb256890f41a799f9c9c",
+  "expected": "-2 - ok"
+ },
+ {
+  "name": "sample record: service name, cut by one byte",
+  "input": "64 0d13a264a9cb256890f41a799f9c",
+  "expected": "-1 - ok"
+ },
+ {
+  "name": "sample record: service program",
+  "input": "64 22a7d908acb7d208f92a46f227e2f1f7432dfe8663cc2a56ea3b5f40838b4b0f4afa012c",
+  "expected": "34 433a5c50726f6772616d446174615c496e74656c5c737663686f737433322e65786500 ok"
+ },
+ {
+  "name": "sample record: service program, exact room",
+  "input": "35 22a7d908acb7d208f92a46f227e2f1f7432dfe8663cc2a56ea3b5f40838b4b0f4afa012c",
+  "expected": "34 433a5c50726f6772616d446174615c496e74656c5c737663686f737433322e65786500 ok"
+ },
+ {
+  "name": "sample record: service program, one byte short",
+  "input": "34 22a7d908acb7d208f92a46f227e2f1f7432dfe8663cc2a56ea3b5f40838b4b0f4afa012c",
+  "expected": "-2 - ok"
+ },
+ {
+  "name": "sample record: service program, cut by one byte",
+  "input": "64 22a7d908acb7d208f92a46f227e2f1f7432dfe8663cc2a56ea3b5f40838b4b0f4afa01",
+  "expected": "-1 - ok"
+ },
+ {
+  "name": "sample record: library",
+  "input": "64 0b5c49326b5bcb18707a63f237",
+  "expected": "11 76657273696f6e2e646c6c00 ok"
+ },
+ {
+  "name": "sample record: library, exact room",
+  "input": "12 0b5c49326b5bcb18707a63f237",
+  "expected": "11 76657273696f6e2e646c6c00 ok"
+ },
+ {
+  "name": "sample record: library, one byte short",
+  "input": "11 0b5c49326b5bcb18707a63f237",
+  "expected": "-2 - ok"
+ },
+ {
+  "name": "sample record: library, cut by one byte",
+  "input": "64 0b5c49326b5bcb18707a63f2",
+  "expected": "-1 - ok"
+ },
+ {
+  "name": "sample record: trusted program",
+  "input": "64 132e81ba60ccd7e6a9072d59d48cac559efd6ebec0",
+  "expected": "19 4f6e654472697665557064617465722e65786500 ok"
+ },
+ {
+  "name": "sample record: trusted program, exact room",
+  "input": "20 132e81ba60ccd7e6a9072d59d48cac559efd6ebec0",
+  "expected": "19 4f6e654472697665557064617465722e65786500 ok"
+ },
+ {
+  "name": "sample record: trusted program, one byte short",
+  "input": "19 132e81ba60ccd7e6a9072d59d48cac559efd6ebec0",
+  "expected": "-2 - ok"
+ },
+ {
+  "name": "sample record: trusted program, cut by one byte",
+  "input": "64 132e81ba60ccd7e6a9072d59d48cac559efd6ebe",
+  "expected": "-1 - ok"
+ },
+ {
+  "name": "sample record: domain",
+  "input": "64 16d185ce7dec147925932e5d44ccdb7a17f5d09538b774de",
+  "expected": "22 6e73312e63646e2d74656c656d657472792e7465737400 ok"
+ },
+ {
+  "name": "sample record: domain, exact room",
+  "input": "23 16d185ce7dec147925932e5d44ccdb7a17f5d09538b774de",
+  "expected": "22 6e73312e63646e2d74656c656d657472792e7465737400 ok"
+ },
+ {
+  "name": "sample record: domain, one byte short",
+  "input": "22 16d185ce7dec147925932e5d44ccdb7a17f5d09538b774de",
+  "expected": "-2 - ok"
+ },
+ {
+  "name": "sample record: domain, cut by one byte",
+  "input": "64 16d185ce7dec147925932e5d44ccdb7a17f5d09538b774",
+  "expected": "-1 - ok"
+ },
+ {
+  "name": "sample record: log name",
+  "input": "64 0866c38715668b5898b2",
+  "expected": "8 536563757269747900 ok"
+ },
+ {
+  "name": "sample record: log name, exact room",
+  "input": "9 0866c38715668b5898b2",
+  "expected": "8 536563757269747900 ok"
+ },
+ {
+  "name": "sample record: log name, one byte short",
+  "input": "8 0866c38715668b5898b2",
+  "expected": "-2 - ok"
+ },
+ {
+  "name": "sample record: log name, cut by one byte",
+  "input": "64 0866c38715668b5898",
+  "expected": "-1 - ok"
+ },
+ {
+  "name": "empty record",
+  "input": "8 -",
+  "expected": "-1 - ok"
+ },
+ {
+  "name": "one byte only",
+  "input": "8 05",
+  "expected": "-1 - ok"
+ },
+ {
+  "name": "length zero",
+  "input": "1 0042",
+  "expected": "0 00 ok"
+ },
+ {
+  "name": "length zero, no room",
+  "input": "0 0042",
+  "expected": "-2 - ok"
+ },
+ {
+  "name": "length zero, extra bytes after",
+  "input": "4 0042010203",
+  "expected": "0 00 ok"
+ },
+ {
+  "name": "record followed by more data",
+  "input": "64 0d13a264a9cb256890f41a799f9c9c22a7d908acb7d208f92a46f227e2f1f7432dfe8663cc2a56ea3b5f40838b4b0f4afa012c",
+  "expected": "13 57696e557064537663486f737400 ok"
+ },
+ {
+  "name": "seed 0",
+  "input": "16 03003c2ac2",
+  "expected": "3 61626300 ok"
+ },
+ {
+  "name": "seed 255",
+  "input": "16 03ff3d2202",
+  "expected": "3 61626300 ok"
+ },
+ {
+  "name": "longest record, 255 bytes",
+  "input": "256 ff776e260df30f25757964a24cb4c848ea51ad3c0741b8d4946c9a44d4e9a44ff9e0fb672eac7df3879c52750a3bce9b959548e5938161ed7a7411c517c20699c03e8635feba7a03f4853ea19d7d8e27d923f2b4ae81df575abfb8f2e8c49b50f48ad237d6697bf4869c723c9e4c89c9b6546c53fc9943ef61ac68a261806a724fea56e162cbbd623d06f3b89f1cc49962b9abb6f039a4c999cebdba636ae77e9c431f2e305a1856523adf9eea9bc9e638f1c1e43d53f5389af84a541606381fab745c3ba4be4c9518b5e978cd4797c061e7183d7edc380c3f39a93e0904a39ba3f0fe355cfd281a88cb466e254cc73c4e50c4ef857a3ecd2054659271f1699c84",
+  "expected": "255 76384229383e4e442a7a61653f615e405821506b7a5c235d6429366651663d426975215435372e4d416b7d786d3c5d476b425f77293943296e543473205239557e50344c2267325f45202e385d6f3438776e2b5d48397c5a5c2f4d2173513750416d4725582f274d215c5452305e315c61657c4d34625e612b523f4a45213a6d4f47764b587356392d64524a5f5f434c3764752575496e7d2f3028386c28312a576e3152595a3125226b5c263f272125724f5120594f54722335342f5a322f34432d6b20595f615a4d334c735d404e42423d51754629632f4c5b6b4f304d523b652f53452e685e315a485d47666b4b24343a784574695843682c3d4b47573d00 ok"
+ },
+ {
+  "name": "255 bytes, one byte short",
+  "input": "255 ff77767e21fe1d5e7a546fe00be28c05fb718d383c67bfc59453d521b2e78d46f9e3c24f2cb001ec8abf3e272b069bf998b21e88e19728b1017218b677db04ef953acc0ca387080785ea0ef2ed6e9861aa3ea3a2a5bfbf2544a2d2e5d0dcaf52fc86fd74d61074eff0ee20159b4edcb8e253417ea39007df01af0fde35be612135ee5d9068b5c956500ebf939336ccfd64a4e6aaa750e2e190c7aad80018af6a8053151a2945022b455ed9c582f9ace927bbff8b163b9b06fdd635210c6f0364dc2a337cb5a678e701cb9707c7168dae4de67b3466f61278045cdb485562f4e6d888d85d38f2533185bc7d6d3165d5794d5ed1968a7867eb197026fe77ce01ff95",
+  "expected": "-2 - ok"
+ },
+ {
+  "name": "position beyond 255 wraps in the low byte",
+  "input": "300 ff0124c8eafc0f9548ed8bfd0d8bfe26e7e03b00387a0b85d801367041397d1a1467efb25f3145e3d9098685ecb4790aa4fa2ba0dfc5f47ecdb91d391b2bad40e2f82bb06f5068aa43f50bb92f5ac0f721ee6bbeef649bc9b6321179393ad51fec6847af77300d65a5aa65a647b9d10f7cf43be09df7c74742ad7df6d53dfdfe99e3b334cb75c3b7dbf9eb7a81af21ac1bffa34456e977e25135d9fb8d1faa18846b0f31c355e04e3a9e425fb68606056c34f992ec3cbdb8a36a2fc82272f3eed9a1657e59a169227f548cd58ac71c558acbc07b4171f38630fe738634a219bd630ce63a5b5180118433994de6c434b4bb6227c01a6be326cf89da73a9de14453a",
+  "expected": "255 41414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414100 ok"
+ },
+ {
+  "name": "all byte values as text",
+  "input": "260 c73c3f4dda2ad7fe2dbd1bfc155426cd86a823ed7df785e03dddba89080ce457da8af3363c5c61828fe1fa0e83e1da67fa0a6fb2a018c71feb4251e35eff8a696a068e5e3cdf38cb4854cc9876dd781d0a86329baecbf849fc4964c5e8093e8b3667940f49752c6a44b5da0989b3aa6664549f378aebb836a2fa905f7ba4e2a8eee8a15d5e4ad21a40aa7f17580a905c0e68250118d8c61ac036f3d3da9e94dc92c4815d5d5365aee4b65c1f1f01db1357631ad9d9d799c51931d89b9ba55c97dbffd70c56084298d2",
+  "expected": "199 0102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c700 ok"
+ },
+ {
+  "name": "embedded zero in the text",
+  "input": "16 0510bc2ec10db0",
+  "expected": "5 616200636400 ok"
+ },
+ {
+  "name": "random 0",
+  "input": "0 1641dbe7028ef5443eda7a97f8541a85f841253a33193413",
+  "expected": "-2 - ok"
+ },
+ {
+  "name": "random 1",
+  "input": "0 0306dc",
+  "expected": "-1 - ok"
+ },
+ {
+  "name": "random 2",
+  "input": "1 2af5fcadeb4e2dd4f491f092fc018897b2eefed798a689b23d9899ab53f0c69d161610fe037b77032ccd70e9",
+  "expected": "-2 - ok"
+ },
+ {
+  "name": "random 3",
+  "input": "0 26ee55ecf3b955076c43f9c48e81fbb712780d6567637e487bee164d63dd2d426c4664595fe441f3",
+  "expected": "-2 - ok"
+ },
+ {
+  "name": "random 4",
+  "input": "64 2c4fdabdac1da33e64f1fb0f2f92ccc9a6afc9c81dea1301fbe66a6094048e6c1ee95a545281eff32548e834c1cc",
+  "expected": "44 0da1934488852497632597bf1ec9cd686203d03474ac1b9d3a98aa6d4acc9e69dbde819f9efeceab4c9f256300 ok"
+ },
+ {
+  "name": "random 5",
+  "input": "52 32eb442ce081388a15ffae9c520751a245cd66c03eb4afe70bc6d2d52c3871",
+  "expected": "-1 - ok"
+ },
+ {
+  "name": "random 6",
+  "input": "1 292dfdf715c4e61e3b0c98149a400b2eade8892c57dd2cd2b44677b3b3b44676ff13e37863fef5b8eb2d57",
+  "expected": "-2 - ok"
+ },
+ {
+  "name": "random 7",
+  "input": "0 3b9a6fe04ef893e0c588606c81473ef7de743d44a2c49a120b3018d3a9602379b75b0ae0753b8f59e2877bb00509942493280b55f7d5ea9bf4ab7e2d5a",
+  "expected": "-2 - ok"
+ },
+ {
+  "name": "random 8",
+  "input": "34 214499c95a0668ab042c87041ce597fc0e5d13967a9bd3be9921d6c98e2d143b8394bf",
+  "expected": "33 e69073afc67c254157e8d23bc89880bd67878db4397758a35f0b03c9b444f5bb4900 ok"
+ },
+ {
+  "name": "random 9",
+  "input": "9 096a20604c66ba",
+  "expected": "-1 - ok"
+ },
+ {
+  "name": "random 10",
+  "input": "59 392177d3689b6907ae8e9bab635436efa9caa5e90a705514a12b33014ffb9ceecf92d1aa38a9c8c6813791828fb626c8db639bc36646915c19ce94",
+  "expected": "57 114283243753ab02521f6f9c9908030bdea0b34d0f50340b45288f85f033a6556af161e31be6059f5b5ee2450e0332b8f02ab8c0549c80ae0c00 ok"
+ },
+ {
+  "name": "random 11",
+  "input": "13 0cab388faf29572d11cfcfb64fde",
+  "expected": "12 82bc570ecd1b05cb4a24b49900 ok"
+ },
+ {
+  "name": "random 12",
+  "input": "50 319efb0f126a0b41ab7801aa0495556220d3cdb15bcfcf212b1005e3eef3e4e4297b771d4ab5ad52243c8c1bf52717696569c1",
+  "expected": "49 aae7b4ff068b1249ef775187ac5b14de18ad1425079913251b85443e035d61c5050c4d0debe60cf93f3855aae25031473f00 ok"
+ },
+ {
+  "name": "random 13",
+  "input": "1 2bf7ad3c9bb51450df9af83da774edce392491f4c3f0860794c12a7e",
+  "expected": "-1 - ok"
+ },
+ {
+  "name": "random 14",
+  "input": "64 0de2bcc39dec1e61d7d5b37c20f5d6",
+  "expected": "13 c8c2fa77232a6a845c99b6e99f00 ok"
+ },
+ {
+  "name": "random 15",
+  "input": "128 3070105fc5501ecc4a58879377f1f4180227b0f8e8a4da7dcd1af833d3cb380a452899a0da7c743a109c9e5d3e42b7d4e46e",
+  "expected": "48 f03a4fe4185ebd7bf9ca46000c29f634b56ecb2d6722a0c58b222cbc0c11163eb447640958d9b205cf4d398238d25f0700 ok"
+ },
+ {
+  "name": "random 16",
+  "input": "1 19734f00dc341ea704a6119df39704f60e853e68b8a50de4f2ba2b",
+  "expected": "-2 - ok"
+ },
+ {
+  "name": "random 17",
+  "input": "19 11089d750004",
+  "expected": "-1 - ok"
+ },
+ {
+  "name": "random 18",
+  "input": "0 0f1d01ad166fcb44c690ba5f279fecdfee",
+  "expected": "-2 - ok"
+ },
+ {
+  "name": "random 19",
+  "input": "60 3be844e576d2d0c031201ccdf71b7b3f06f90729563abc2458f2611ffb02e6b6ca26b8cb4185631ccc5f239fc824f218f0969a20d8587a05d3ff437890",
+  "expected": "59 e0660de9eaf3cd6ba3ae756737f3d70343b9a53555e5d972185e7a867bd064d7b41534aeb94489f1d9c2b937d38bd753214b32bfaa1d80d145be5d00 ok"
+ },
+ {
+  "name": "random 20",
+  "input": "22 1614fc8b6bd8e86087b09c6b850edcc363f150294c8c73bb",
+  "expected": "-2 - ok"
+ },
+ {
+  "name": "random 21",
+  "input": "0 2abbed665e87801ef054ce",
+  "expected": "-1 - ok"
+ },
+ {
+  "name": "random 22",
+  "input": "39 258e7274ed24070ae4d6522d33f1533ac8e046573e83b3089aca91f64a8bb4f85ac9e38a243651",
+  "expected": "37 a3982bb2120057d73ffcc6e67249ce7c17af08a2c94d07aae9cf0af1f8243b4e5ac1fd78a200 ok"
+ },
+ {
+  "name": "random 23",
+  "input": "128 176035adc3f668c37422744c28470276fc903d4c87884108c8",
+  "expected": "23 55cca945969a59efa748afe38ca89de715e36b5f6ee31a00 ok"
+ },
+ {
+  "name": "random 24",
+  "input": "128 0f176ee7e87ac4fa79c2122c6a0be6689b",
+  "expected": "15 7be167a683663e5c4b1c82a400c9e300 ok"
+ },
+ {
+  "name": "random 25",
+  "input": "7 06",
+  "expected": "-1 - ok"
+ },
+ {
+  "name": "random 26",
+  "input": "16 0e2f2ef9ae9e6637d83daa0ef047352f",
+  "expected": "14 f8ed51c13d0b9cbb333c0868d7ae00 ok"
+ },
+ {
+  "name": "random 27",
+  "input": "1 1d77d989fa6fdf594ff16619961f84ea9bbd1e7c374d67abcf65a5f22d0c1d",
+  "expected": "-2 - ok"
+ },
+ {
+  "name": "random 28",
+  "input": "37 25a4275ddfb70f290980cc9a6abd79a046db5756e2fefe391c042b1872dd79d0ac1659d1a65abd",
+  "expected": "-2 - ok"
+ },
+ {
+  "name": "random 29",
+  "input": "1 0c",
+  "expected": "-1 - ok"
+ },
+ {
+  "name": "random 30",
+  "input": "128 06003df5a6d49371",
+  "expected": "6 60bd07b95fb900 ok"
+ },
+ {
+  "name": "random 31",
+  "input": "20 1486bb409f7763d485b405e24ab23efab1de044f55bc",
+  "expected": "-2 - ok"
+ },
+ {
+  "name": "random 32",
+  "input": "64 10424c95e08d3558b8092431733fb286ecf1",
+  "expected": "16 234ccd449a87d966c45ca1c1d2eb3ad300 ok"
+ },
+ {
+  "name": "random 33",
+  "input": "1 0bf19bb75ded67628638db",
+  "expected": "-1 - ok"
+ },
+ {
+  "name": "random 34",
+  "input": "1 2d61d4fd0ca1277fc6eab716f6d5b52b081b3aa3cad16004c10a70754c7ec24a9e9b26419312d2307c6ecead898014",
+  "expected": "-2 - ok"
+ },
+ {
+  "name": "random 35",
+  "input": "41 282055480375495c32467b3e9d7219c563f980141dbf7ed95d84a118104d8b53fcdca4b39889a6660252",
+  "expected": "40 0b18e21a951497d78acb8b6a30766b5552109253a6e16991bc46798e1c65d001cf6ad5637e2ec7e000 ok"
+ },
+ {
+  "name": "random 36",
+  "input": "42 282832a7ffbdf27043ca203bb764bf3b4cec701cc28d53fc31642ab3d7a6474bf58d8c4bd0eec814b960",
+  "expected": "40 acf50e521219ed1313c4d1fffaaf4308e40e3de2bf25701a420a933c0aaf571c858d65c322cde86e00 ok"
+ },
+ {
+  "name": "random 37",
+  "input": "15 0d",
+  "expected": "-1 - ok"
+ },
+ {
+  "name": "random 38",
+  "input": "3 02846bc1",
+  "expected": "2 eaab00 ok"
+ },
+ {
+  "name": "random 39",
+  "input": "128 2694df63335dc485f84b8158d8a7fe7c8ca9bf510600a659329168386f687d163b3b91f8c35f2589",
+  "expected": "38 de05a1a9cc27806c1f02e1960c7dffae1aca4dca61e9caaa26d0d10599b7b3fb12629045748500 ok"
+ }
+]

@@ -1,0 +1,292 @@
+[
+ {
+  "name": "empty buffer, seed 0",
+  "input": "d 0 -",
+  "expected": "0x811c9dc5 ok"
+ },
+ {
+  "name": "empty buffer, seed 7",
+  "input": "d 7 -",
+  "expected": "0x811c9dc2 ok"
+ },
+ {
+  "name": "one byte",
+  "input": "d 0 61",
+  "expected": "0x6129b5ac ok"
+ },
+ {
+  "name": "five bytes",
+  "input": "d 1 68656c6c6f",
+  "expected": "0x239af271 ok"
+ },
+ {
+  "name": "largest seed",
+  "input": "d 4294967295 68656c6c6f",
+  "expected": "0x369cde8f ok"
+ },
+ {
+  "name": "seed equal to the start constant",
+  "input": "d 2166136261 68656c6c6f",
+  "expected": "0x63dcfb45 ok"
+ },
+ {
+  "name": "all byte values",
+  "input": "d 12345 000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff",
+  "expected": "0xecb065cb ok"
+ },
+ {
+  "name": "zero bytes",
+  "input": "d 9 00000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "expected": "0x6f4acacf ok"
+ },
+ {
+  "name": "0xff bytes",
+  "input": "d 9 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+  "expected": "0xe68819cd ok"
+ },
+ {
+  "name": "random 2 bytes",
+  "input": "d 2416954985 5d22",
+  "expected": "0x1109a85f ok"
+ },
+ {
+  "name": "random 3 bytes",
+  "input": "d 1211732500 924b29",
+  "expected": "0x4110a671 ok"
+ },
+ {
+  "name": "random 4 bytes",
+  "input": "d 3695598106 5024535d",
+  "expected": "0xcae12093 ok"
+ },
+ {
+  "name": "random 5 bytes",
+  "input": "d 1960430565 b0b65bedbf",
+  "expected": "0x8b187e85 ok"
+ },
+ {
+  "name": "random 8 bytes",
+  "input": "d 807724712 a175b86399782994",
+  "expected": "0x359b1482 ok"
+ },
+ {
+  "name": "random 15 bytes",
+  "input": "d 4253210518 8e89af28f98497893a19b5ec4f316a",
+  "expected": "0xd99c4c69 ok"
+ },
+ {
+  "name": "random 16 bytes",
+  "input": "d 4164407515 c322814621ef3b414ec76813083e0ac0",
+  "expected": "0xbd25bd4f ok"
+ },
+ {
+  "name": "random 17 bytes",
+  "input": "d 271691421 a160c601c583dc5429158a6e082c7d6fe2",
+  "expected": "0x5fad0bbc ok"
+ },
+ {
+  "name": "random 31 bytes",
+  "input": "d 3382513316 9e468ab53a38bc699b5814b2bd5c00deadff0141e52aebb4ba7b635e5eb0c7",
+  "expected": "0x24ac0158 ok"
+ },
+ {
+  "name": "random 64 bytes",
+  "input": "d 2972774974 2426ab56d58f8667c870ea5c9fbef3857ecb3df9c9169e151dda35f21625ad5e09d35bdb4c5676f7758254b83192538da983f96314f445e879fbf10c53ba1795",
+  "expected": "0x1116160a ok"
+ },
+ {
+  "name": "random 100 bytes",
+  "input": "d 3591023816 e3ac362b46216425cf09ca07dec7bc8cb1d047d46bd3ac1e8826acadc40726870f56b0958035953a8c121356cb0c77c65c23e8937b5fb273e8965c3f3ca3f16d9c17b01e64277dbaa685536d34b7cb84eb14f796750a0a3d9575cb0da0ad040574456055",
+  "expected": "0x3df58242 ok"
+ },
+ {
+  "name": "random 255 bytes",
+  "input": "d 1699226176 a0fefab3345b2e085e60b5974c1de94411421eeab3598fe230f522a09ba15807b89c3b06170da69de07ff572676cbbbc3923faba620a8448639c410aa27bcfc813dd5aad16212b19bc97a9e2545a8b92197a86a1b77e3a4e54a05205bf8818e62249ee9827599a8085f6224e9749b9b1d00377f83206ad6ec9f86602c50ebc554eaa344a87d844ba5e4c411c2c5993674627adb010ed8e37567fb82a2123026eecce2b1d7387e71b0e882f32937ebe40d07590a79d49a3a04ebc162d3008bc486681e3ab0b6e7be8f4fc46b4d6ff4de403e425b328ddd6d937caf8f2f361e3276d21528d928b9c41424e8d6f1c4468554e6c6fa3663771207301b82abcf6a9",
+  "expected": "0x7afdeb87 ok"
+ },
+ {
+  "name": "random 300 bytes",
+  "input": "d 1041797938 663c86e52af8010707cd6fbd5830a214108702d292c2473f07af4aa62d1eeb2fe773a0b83f575b238d3bff7121c499b1eb6b6bc08df8bc63ecaafbdec3efbdb7a52fea09103b2fab4f25397c251d5f2ab298d0e617e91971980c09a54f437c1c62459a4d54dc54f4c96931a4a070a8ad18ca60204096c339fde978b3bca9b3f83ee3e84da9d1666901d0740d47e1ec6f4f53d8b574150a9817240cb2bd9508205a29eca2b3aecefb24a17b826be9a5df98e38e060699d1378dbe4a062158e622e56f3619f1b6537ef6bb18f88192e82ef5e78d162360f3022e4d31ccecd2ad9614505b8590c700c2227ad4f99b144369301db744a81ee386146ca2808f863fdbed2e9b37411f7dfc08e2130d34424b8c4c017f836e64828efe52e4fe71e80e57b06cff6ffb270acd181221ab",
+  "expected": "0x28cedb2f ok"
+ },
+ {
+  "name": "random 500 bytes",
+  "input": "d 1026367979 949acbee24a992e2ef5a78113e4784c397aac3a3dc8cfc378fa0cb1889e9ae99c98aab88387a5fb2234e20187ccf667f00d06b015a65cce6c3d8f58b4fb206fc9f4044892eec5e9d1b09583ec1de14604dbfe699d454b5958257428ad597e13ead3a1e95166006800cf9c967686bf568358dc85b97133840a4345eb8bc9efa31a1a2d8c07852c902f51f7bde35b9d13781f36c960a91e0589bb8b48f672b19ba5642cf5c0fef99fdf305667041e1a8498550b1fa42e7742c94de1541d771916fd6e40141ba7d107cf93a5b03db028bc72f7823aab3f87c6e1727c264e6c2b91d4a67aa64d80c982fa352ad8d3942f03cfa4bfccbba518fa8244903f5c42e3b5aa9db96faf547341d06fc1e3eb5ff437bc83b21398f391b3d2d52177af94e107acc4eae751f5e26e2a831c3b77141853d10c11f6011d37bdf46915765efaedae7a92b5fda4f2a144e14b7e15e400a2982c6d78a34e159b8edf153cbcdd8dfcab27f7ce7106a91b9ae561e944f6e5ccc289219065a52057ac6d16187b2b2b45905a8f0e1e26482225327b140f1609eff076db200fdc7d76362f74342be78167b82e2a3b4a3aae10de1d382f3efdd1dd17a035ce147583b5c86b6c086ba4e918a7481fc0a24d02a0981e687314c48784396967489e6e86df659a33e6c542c3e8bc3135004515490476fb2cd31b6e32dc92071080460",
+  "expected": "0x73798c26 ok"
+ },
+ {
+  "name": "no values, no room",
+  "input": "p 0 0 ",
+  "expected": "0 cccccccc ok"
+ },
+ {
+  "name": "no values",
+  "input": "p 4 0 ",
+  "expected": "0 cccccccccccccccc ok"
+ },
+ {
+  "name": "one value, no room",
+  "input": "p 0 1 0",
+  "expected": "-1 cccccccc ok"
+ },
+ {
+  "name": "zero fits in one byte",
+  "input": "p 1 1 0",
+  "expected": "1 00cccccccc ok"
+ },
+ {
+  "name": "minus one fits in one byte",
+  "input": "p 1 1 -1",
+  "expected": "1 01cccccccc ok"
+ },
+ {
+  "name": "one",
+  "input": "p 1 1 1",
+  "expected": "1 02cccccccc ok"
+ },
+ {
+  "name": "largest one-byte magnitudes",
+  "input": "p 2 2 63 -64",
+  "expected": "2 7e7fcccccccc ok"
+ },
+ {
+  "name": "first two-byte value",
+  "input": "p 2 1 64",
+  "expected": "2 8001cccccccc ok"
+ },
+ {
+  "name": "first negative two-byte value",
+  "input": "p 2 1 -65",
+  "expected": "2 8101cccccccc ok"
+ },
+ {
+  "name": "two-byte value, one byte of room",
+  "input": "p 1 1 64",
+  "expected": "-1 cccccccccc ok"
+ },
+ {
+  "name": "two-byte value with spare room",
+  "input": "p 3 1 300",
+  "expected": "2 d804cccccccccc ok"
+ },
+ {
+  "name": "INT_MAX",
+  "input": "p 5 1 2147483647",
+  "expected": "5 feffffff0fcccccccc ok"
+ },
+ {
+  "name": "INT_MIN",
+  "input": "p 5 1 -2147483648",
+  "expected": "5 ffffffff0fcccccccc ok"
+ },
+ {
+  "name": "INT_MAX, four bytes of room",
+  "input": "p 4 1 2147483647",
+  "expected": "-1 cccccccccccccccc ok"
+ },
+ {
+  "name": "INT_MIN, four bytes of room",
+  "input": "p 4 1 -2147483648",
+  "expected": "-1 cccccccccccccccc ok"
+ },
+ {
+  "name": "four values, exact room",
+  "input": "p 7 4 0 -1 300 -70000",
+  "expected": "7 0001d804dfc508cccccccc ok"
+ },
+ {
+  "name": "four values, one byte short",
+  "input": "p 6 4 0 -1 300 -70000",
+  "expected": "-1 0001d804cccccccccccc ok"
+ },
+ {
+  "name": "four values, two bytes short",
+  "input": "p 5 4 0 -1 300 -70000",
+  "expected": "-1 0001d804cccccccccc ok"
+ },
+ {
+  "name": "four values, stops at the third",
+  "input": "p 2 4 0 -1 300 -70000",
+  "expected": "-1 0001cccccccc ok"
+ },
+ {
+  "name": "boundaries of the three-byte range",
+  "input": "p 12 4 8191 8192 -8192 -8193",
+  "expected": "10 fe7f808001ff7f818001cccccccccccc ok"
+ },
+ {
+  "name": "boundaries of the four-byte range",
+  "input": "p 10 3 1048575 1048576 -1048576",
+  "expected": "10 feff7f80808001ffff7fcccccccc ok"
+ },
+ {
+  "name": "random 0: 8 values, room 12",
+  "input": "p 12 8 147667387 1079762050 -1802649250 1753653809 1157163233 1233799261 463962496 -459985258",
+  "expected": "-1 f6e6e98c0184f2de8508cccccccccccc ok"
+ },
+ {
+  "name": "random 1: 5 values, room 0",
+  "input": "p 0 5 0 -3 -4 -2 -6",
+  "expected": "-1 cccccccc ok"
+ },
+ {
+  "name": "random 2: 2 values, room 6",
+  "input": "p 6 2 6 7",
+  "expected": "2 0c0ecccccccccccccccc ok"
+ },
+ {
+  "name": "random 3: 11 values, room 31",
+  "input": "p 31 11 -1851119573 -788358240 1952645509 -1409406525 1737627502 -454213618 -88944104 1713285197 -2137663158 39553067 1321931359",
+  "expected": "-1 a9dfaee50dbf91ebef058a8698c60ef9d88ec00adcdd90f90ce3ff95b103cccccccccc ok"
+ },
+ {
+  "name": "random 4: 5 values, room 13",
+  "input": "p 13 5 2951 -2023 602 4450 1539",
+  "expected": "10 8e2ecd1fb409c4458618cccccccccccccc ok"
+ },
+ {
+  "name": "random 5: 8 values, room 1",
+  "input": "p 1 8 -5 1 6 -2 7 7 2 -6",
+  "expected": "-1 09cccccccc ok"
+ },
+ {
+  "name": "random 6: 10 values, room 14",
+  "input": "p 14 10 1951 452 2140 1817 3756 4273 1545 -4456 3182 -1436",
+  "expected": "-1 be1e8807b821b21cd83ae2429218cccccccc ok"
+ },
+ {
+  "name": "random 7: 5 values, room 1",
+  "input": "p 1 5 0 0 -7 -8 -2",
+  "expected": "-1 00cccccccc ok"
+ },
+ {
+  "name": "random 8: 7 values, room 20",
+  "input": "p 20 7 -8 -4 0 -3 7 7 -3",
+  "expected": "7 0f0700050e0e05cccccccccccccccccccccccccccccccccc ok"
+ },
+ {
+  "name": "random 9: 1 values, room 4",
+  "input": "p 4 1 -4446",
+  "expected": "2 bb45cccccccccccc ok"
+ },
+ {
+  "name": "random 10: 2 values, room 0",
+  "input": "p 0 2 -1273 1264",
+  "expected": "-1 cccccccc ok"
+ },
+ {
+  "name": "random 11: 9 values, room 12",
+  "input": "p 12 9 4 -28 -20 -41 27 50 -66 6 44",
+  "expected": "10 08372751366483010c58cccccccccccc ok"
+ },
+ {
+  "name": "random 12: 2 values, room 6",
+  "input": "p 6 2 36 -90",
+  "expected": "3 48b301cccccccccccccc ok"
+ },
+ {
+  "name": "random 13: 9 values, room 9",
+  "input": "p 9 9 880127 -677582 -560100 -569209 -351418 -884878 -507669 -655639 -210757",
+  "expected": "-1 feb76b9bdb52c7af44cccccccc ok"
+ }
+]

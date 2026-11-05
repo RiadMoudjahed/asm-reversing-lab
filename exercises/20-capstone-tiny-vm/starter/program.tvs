@@ -1,0 +1,4 @@
+; Exercise 20, Part 2: your bytecode program. The README describes the target output.
+; Assemble with:  python3 tvasm.py --isa isa.json program.tvs program.tvm
+; Run with:       ../bin/tinyvm program.tvm
+        halt

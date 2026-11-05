@@ -1,0 +1,18 @@
+name: Exercise problem
+description: A checker rejects a correct answer, a test is wrong, or a hint is misleading.
+labels: ["exercise"]
+body:
+  - type: input
+    id: exercise
+    attributes:
+      label: Exercise number and part
+      placeholder: "07, Part 2"
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Paste the checker output. Do not paste the flag or a full solution.
+    validations:
+      required: true

@@ -1,0 +1,297 @@
+[
+ {
+  "name": "first byte of first section",
+  "input": "R 3 1000 1768 1800 600 3000 80 200 1e00 4000 8a0 a00 2000 1000",
+  "expected": "00000600 ok"
+ },
+ {
+  "name": "inside first section",
+  "input": "R 3 1000 1768 1800 600 3000 80 200 1e00 4000 8a0 a00 2000 1410",
+  "expected": "00000a10 ok"
+ },
+ {
+  "name": "last raw byte of a section",
+  "input": "R 3 1000 1768 1800 600 3000 80 200 1e00 4000 8a0 a00 2000 27ff",
+  "expected": "00001dff ok"
+ },
+ {
+  "name": "one past the raw data, inside the virtual size",
+  "input": "R 1 1000 2000 1000 400 2000",
+  "expected": "ffffffff ok"
+ },
+ {
+  "name": "between sections",
+  "input": "R 3 1000 1768 1800 600 3000 80 200 1e00 4000 8a0 a00 2000 2500",
+  "expected": "00001b00 ok"
+ },
+ {
+  "name": "below the first section",
+  "input": "R 3 1000 1768 1800 600 3000 80 200 1e00 4000 8a0 a00 2000 800",
+  "expected": "ffffffff ok"
+ },
+ {
+  "name": "above the last section",
+  "input": "R 3 1000 1768 1800 600 3000 80 200 1e00 4000 8a0 a00 2000 9000",
+  "expected": "ffffffff ok"
+ },
+ {
+  "name": "second section",
+  "input": "R 3 1000 1768 1800 600 3000 80 200 1e00 4000 8a0 a00 2000 3010",
+  "expected": "00001e10 ok"
+ },
+ {
+  "name": "third section start",
+  "input": "R 3 1000 1768 1800 600 3000 80 200 1e00 4000 8a0 a00 2000 4000",
+  "expected": "00002000 ok"
+ },
+ {
+  "name": "third section end",
+  "input": "R 3 1000 1768 1800 600 3000 80 200 1e00 4000 8a0 a00 2000 49ff",
+  "expected": "000029ff ok"
+ },
+ {
+  "name": "section with no raw data",
+  "input": "R 6 2000 6cc8 6e00 400 a000 d0 200 7200 c000 dc0 e00 7400 10000 480 600 8400 14000 da0 0 0 16000 780 800 9000 14010",
+  "expected": "ffffffff ok"
+ },
+ {
+  "name": "bss-like then next",
+  "input": "R 6 2000 6cc8 6e00 400 a000 d0 200 7200 c000 dc0 e00 7400 10000 480 600 8400 14000 da0 0 0 16000 780 800 9000 16100",
+  "expected": "00009100 ok"
+ },
+ {
+  "name": "many sections, fourth",
+  "input": "R 6 2000 6cc8 6e00 400 a000 d0 200 7200 c000 dc0 e00 7400 10000 480 600 8400 14000 da0 0 0 16000 780 800 9000 10123",
+  "expected": "00008523 ok"
+ },
+ {
+  "name": "many sections, last raw byte",
+  "input": "R 6 2000 6cc8 6e00 400 a000 d0 200 7200 c000 dc0 e00 7400 10000 480 600 8400 14000 da0 0 0 16000 780 800 9000 167ff",
+  "expected": "000097ff ok"
+ },
+ {
+  "name": "no sections",
+  "input": "R 0 1000",
+  "expected": "ffffffff ok"
+ },
+ {
+  "name": "rva zero",
+  "input": "R 3 1000 1768 1800 600 3000 80 200 1e00 4000 8a0 a00 2000 0",
+  "expected": "ffffffff ok"
+ },
+ {
+  "name": "largest rva",
+  "input": "R 3 1000 1768 1800 600 3000 80 200 1e00 4000 8a0 a00 2000 ffffffff",
+  "expected": "ffffffff ok"
+ },
+ {
+  "name": "section near the top of the address space",
+  "input": "R 1 ffffe000 1000 1000 200 ffffefff",
+  "expected": "000011ff ok"
+ },
+ {
+  "name": "section near the top, outside",
+  "input": "R 1 ffffe000 1000 1000 200 fffff000",
+  "expected": "ffffffff ok"
+ },
+ {
+  "name": "one section only",
+  "input": "R 1 1000 10 10 400 100f",
+  "expected": "0000040f ok"
+ },
+ {
+  "name": "entry in first section, module 12 example",
+  "input": "E 3 1410 1000 1768 1800 600 3000 80 200 1e00 4000 8a0 a00 2000",
+  "expected": "00000a10 ok"
+ },
+ {
+  "name": "entry in first section, puzzle-like",
+  "input": "E 6 2410 2000 6cc8 6e00 400 a000 d0 200 7200 c000 dc0 e00 7400 10000 480 600 8400 14000 da0 0 0 16000 780 800 9000",
+  "expected": "00000810 ok"
+ },
+ {
+  "name": "entry at the very start",
+  "input": "E 3 1000 1000 1768 1800 600 3000 80 200 1e00 4000 8a0 a00 2000",
+  "expected": "00000600 ok"
+ },
+ {
+  "name": "entry in the third section",
+  "input": "E 3 4100 1000 1768 1800 600 3000 80 200 1e00 4000 8a0 a00 2000",
+  "expected": "00002100 ok"
+ },
+ {
+  "name": "entry outside every section",
+  "input": "E 3 9000 1000 1768 1800 600 3000 80 200 1e00 4000 8a0 a00 2000",
+  "expected": "ffffffff ok"
+ },
+ {
+  "name": "single section",
+  "input": "E 1 1010 1000 200 200 400",
+  "expected": "00000410 ok"
+ },
+ {
+  "name": "no sections",
+  "input": "E 0 1000 ",
+  "expected": "ffffffff ok"
+ },
+ {
+  "name": "missing MZ",
+  "input": "M 0",
+  "expected": "ffffffff ok"
+ },
+ {
+  "name": "missing PE signature",
+  "input": "M 1",
+  "expected": "ffffffff ok"
+ },
+ {
+  "name": "random image 0",
+  "input": "E 8 230d 1000 1ddd 1800 400 3000 2090 a00 1c00 6000 c37 1800 2600 7000 20d3 200 3e00 a000 285f a00 4000 d000 bfa 1800 4a00 e000 1ca4 0 6200 10000 923 400 6200",
+  "expected": "0000170d ok"
+ },
+ {
+  "name": "random table 1",
+  "input": "R 8 1000 29aa 1800 400 4000 27f1 200 1c00 7000 21e0 0 1e00 a000 3df 0 1e00 b000 c3c 0 1e00 c000 2670 200 1e00 f000 1dc1 0 2000 11000 1c41 400 2000 12e92",
+  "expected": "ffffffff ok"
+ },
+ {
+  "name": "random table 2",
+  "input": "R 5 1000 5b a00 400 2000 1d54 0 e00 4000 1a18 400 e00 6000 563 1800 1200 7000 143d 400 2a00 3acb",
+  "expected": "ffffffff ok"
+ },
+ {
+  "name": "random image 3",
+  "input": "E 2 253c 1000 6f8 1800 400 2000 6f6 a00 1c00",
+  "expected": "0000193c ok"
+ },
+ {
+  "name": "random table 4",
+  "input": "R 1 1000 d7c 200 400 1c03",
+  "expected": "ffffffff ok"
+ },
+ {
+  "name": "random table 5",
+  "input": "R 7 1000 244d 0 400 4000 2b41 200 400 7000 159f 400 600 9000 13fa 0 a00 b000 108 400 a00 c000 79d a00 e00 d000 fd4 200 1800 11ea",
+  "expected": "ffffffff ok"
+ },
+ {
+  "name": "random image 6",
+  "input": "E 8 8a22 1000 2bb7 200 400 4000 c1e 1800 600 5000 20a1 a00 1e00 8000 2ee7 200 2800 b000 1ae4 200 2a00 d000 784 a00 2c00 e000 1afd a00 3600 10000 17 200 4000",
+  "expected": "ffffffff ok"
+ },
+ {
+  "name": "random table 7",
+  "input": "R 3 1000 2697 a00 400 4000 67b 1800 e00 5000 96d 0 2600 3697",
+  "expected": "ffffffff ok"
+ },
+ {
+  "name": "random table 8",
+  "input": "R 6 1000 18c7 400 400 3000 4d1 0 800 4000 d6b 0 800 5000 28cd 1800 800 8000 10e 200 2000 9000 17a8 1800 2200 5f27",
+  "expected": "00001727 ok"
+ },
+ {
+  "name": "random image 9",
+  "input": "E 8 2830 1000 8bf 1800 400 2000 bc3 a00 1c00 3000 13f4 200 2600 5000 2721 200 2800 8000 2e7c 200 2a00 b000 a34 200 2c00 c000 ca4 1800 2e00 d000 1ef1 a00 4600",
+  "expected": "00002430 ok"
+ },
+ {
+  "name": "random table 10",
+  "input": "R 2 1000 20da 0 400 4000 f52 400 400 4839",
+  "expected": "ffffffff ok"
+ },
+ {
+  "name": "random table 11",
+  "input": "R 8 1000 2158 400 400 4000 2e2a 200 800 7000 826 0 a00 8000 1ebc 200 a00 a000 29e3 1800 c00 d000 2760 1800 2400 10000 11ff 0 3c00 12000 d1d 200 3c00 489d",
+  "expected": "ffffffff ok"
+ },
+ {
+  "name": "random image 12",
+  "input": "E 8 1092 1000 3ee 200 400 2000 b57 0 600 3000 17aa 400 600 5000 24ae 1800 a00 8000 5f6 200 2200 9000 8eb 400 2400 a000 153e a00 2800 c000 2577 1800 3200",
+  "expected": "00000492 ok"
+ },
+ {
+  "name": "random table 13",
+  "input": "R 6 1000 235 400 400 2000 265b 0 800 5000 1eec 0 800 7000 2ed0 0 800 a000 1478 400 800 c000 4b2 200 c00 8179",
+  "expected": "ffffffff ok"
+ },
+ {
+  "name": "random table 14",
+  "input": "R 1 1000 15ed 200 400 25ec",
+  "expected": "ffffffff ok"
+ },
+ {
+  "name": "random image 15",
+  "input": "E 2 1dc 1000 1ff a00 400 2000 24b8 a00 e00",
+  "expected": "ffffffff ok"
+ },
+ {
+  "name": "random table 16",
+  "input": "R 2 1000 5dd 0 400 2000 1086 0 400 2c6e",
+  "expected": "ffffffff ok"
+ },
+ {
+  "name": "random table 17",
+  "input": "R 8 1000 22b3 a00 400 4000 2142 0 e00 7000 1f8 1800 e00 8000 268b 400 2600 b000 1ed7 0 2a00 d000 ecb 0 2a00 e000 1fe2 0 2a00 10000 2a4f 1800 2a00 b05c",
+  "expected": "ffffffff ok"
+ },
+ {
+  "name": "random image 18",
+  "input": "E 5 5cf3 1000 2b76 200 400 4000 d06 1800 600 5000 aea 1800 1e00 6000 2a4d 400 3600 9000 1ff4 a00 3a00",
+  "expected": "00002af3 ok"
+ },
+ {
+  "name": "random table 19",
+  "input": "R 4 1000 ce1 a00 400 2000 18aa 200 e00 4000 2561 200 1000 7000 d7e 400 1200 2fe3",
+  "expected": "ffffffff ok"
+ },
+ {
+  "name": "random table 20",
+  "input": "R 1 1000 11c7 0 400 1e6b",
+  "expected": "ffffffff ok"
+ },
+ {
+  "name": "random image 21",
+  "input": "E 5 1101 1000 1a8e 200 400 3000 281c a00 600 6000 1fab 1800 1000 8000 2de7 400 2800 b000 1d05 1800 2c00",
+  "expected": "00000501 ok"
+ },
+ {
+  "name": "random table 22",
+  "input": "R 1 1000 2494 400 400 2d56",
+  "expected": "ffffffff ok"
+ },
+ {
+  "name": "random table 23",
+  "input": "R 3 1000 1d2b a00 400 3000 1a5 200 e00 4000 f41 400 1000 63be",
+  "expected": "ffffffff ok"
+ },
+ {
+  "name": "random image 24",
+  "input": "E 8 773f 1000 2861 0 400 4000 29fc 1800 400 7000 50d 400 1c00 8000 cd2 200 2000 9000 1072 a00 2200 b000 2dc5 200 2c00 e000 1e48 0 2e00 10000 2dc4 1800 2e00",
+  "expected": "ffffffff ok"
+ },
+ {
+  "name": "random table 25",
+  "input": "R 6 1000 2cb0 1800 400 4000 2016 1800 1c00 7000 a40 1800 3400 8000 2cd9 a00 4c00 b000 5a4 200 5600 c000 2e4b a00 5800 4e6a",
+  "expected": "00002a6a ok"
+ },
+ {
+  "name": "random table 26",
+  "input": "R 4 1000 182d 0 400 3000 2477 1800 400 6000 1605 1800 1c00 8000 14f4 a00 3400 a6bd",
+  "expected": "ffffffff ok"
+ },
+ {
+  "name": "random image 27",
+  "input": "E 4 401 1000 1909 200 400 3000 13e4 0 600 5000 1491 1800 600 7000 2e08 400 1e00",
+  "expected": "ffffffff ok"
+ },
+ {
+  "name": "random table 28",
+  "input": "R 1 1000 15f4 a00 400 2895",
+  "expected": "ffffffff ok"
+ },
+ {
+  "name": "random table 29",
+  "input": "R 8 1000 e08 0 400 2000 1b83 0 400 4000 b20 0 400 5000 1580 1800 400 7000 1e2d 200 1c00 9000 211e 200 1e00 c000 2b72 1800 2000 f000 1f96 a00 3800 1286c",
+  "expected": "ffffffff ok"
+ }
+]

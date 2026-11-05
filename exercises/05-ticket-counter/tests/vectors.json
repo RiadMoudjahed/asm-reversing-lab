@@ -1,0 +1,482 @@
+[
+ {
+  "name": "case 1",
+  "stdin": "12\n34\n",
+  "stdout": "46\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 2",
+  "stdin": "0\n0\n",
+  "stdout": "0\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 3",
+  "stdin": "000\n0000\n",
+  "stdout": "0\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 4",
+  "stdin": "5\n5\n",
+  "stdout": "10\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 5",
+  "stdin": "0099\n1\n",
+  "stdout": "100\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 6",
+  "stdin": "999999999999\n0\n",
+  "stdout": "999999999999\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 7",
+  "stdin": "999999999999\n1\n",
+  "stdout": "OVERFLOW\n",
+  "exit_status": 2
+ },
+ {
+  "name": "case 8",
+  "stdin": "500000000000\n500000000000\n",
+  "stdout": "OVERFLOW\n",
+  "exit_status": 2
+ },
+ {
+  "name": "case 9",
+  "stdin": "499999999999\n500000000000\n",
+  "stdout": "999999999999\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 10",
+  "stdin": "123456789012\n987654321098\n",
+  "stdout": "OVERFLOW\n",
+  "exit_status": 2
+ },
+ {
+  "name": "case 11",
+  "stdin": "1\n999999999999\n",
+  "stdout": "OVERFLOW\n",
+  "exit_status": 2
+ },
+ {
+  "name": "case 12",
+  "stdin": "999999999999\n999999999999\n",
+  "stdout": "OVERFLOW\n",
+  "exit_status": 2
+ },
+ {
+  "name": "case 13",
+  "stdin": "000000000001\n000000000001\n",
+  "stdout": "2\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 14",
+  "stdin": "9\n1\n",
+  "stdout": "10\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 15",
+  "stdin": "99\n1\n",
+  "stdout": "100\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 16",
+  "stdin": "1\n99\n",
+  "stdout": "100\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 17",
+  "stdin": "4294967295\n1\n",
+  "stdout": "4294967296\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 18",
+  "stdin": "4294967296\n4294967296\n",
+  "stdout": "8589934592\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 19",
+  "stdin": "1\n2\nextra lines are ignored\n",
+  "stdout": "3\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 20",
+  "stdin": "",
+  "stdout": "ERR\n",
+  "exit_status": 1
+ },
+ {
+  "name": "case 21",
+  "stdin": "\n",
+  "stdout": "ERR\n",
+  "exit_status": 1
+ },
+ {
+  "name": "case 22",
+  "stdin": "\n5\n",
+  "stdout": "ERR\n",
+  "exit_status": 1
+ },
+ {
+  "name": "case 23",
+  "stdin": "5\n\n",
+  "stdout": "ERR\n",
+  "exit_status": 1
+ },
+ {
+  "name": "case 24",
+  "stdin": "12a\n5\n",
+  "stdout": "ERR\n",
+  "exit_status": 1
+ },
+ {
+  "name": "case 25",
+  "stdin": "5\n12a\n",
+  "stdout": "ERR\n",
+  "exit_status": 1
+ },
+ {
+  "name": "case 26",
+  "stdin": "+5\n3\n",
+  "stdout": "ERR\n",
+  "exit_status": 1
+ },
+ {
+  "name": "case 27",
+  "stdin": "5\n-3\n",
+  "stdout": "ERR\n",
+  "exit_status": 1
+ },
+ {
+  "name": "case 28",
+  "stdin": "1 2\n3\n",
+  "stdout": "ERR\n",
+  "exit_status": 1
+ },
+ {
+  "name": "case 29",
+  "stdin": " 5\n3\n",
+  "stdout": "ERR\n",
+  "exit_status": 1
+ },
+ {
+  "name": "case 30",
+  "stdin": "5 \n3\n",
+  "stdout": "ERR\n",
+  "exit_status": 1
+ },
+ {
+  "name": "case 31",
+  "stdin": "12\n34",
+  "stdout": "ERR\n",
+  "exit_status": 1
+ },
+ {
+  "name": "case 32",
+  "stdin": "12\r\n34\r\n",
+  "stdout": "ERR\n",
+  "exit_status": 1
+ },
+ {
+  "name": "case 33",
+  "stdin": "1234567890123\n1\n",
+  "stdout": "ERR\n",
+  "exit_status": 1
+ },
+ {
+  "name": "case 34",
+  "stdin": "1\n1234567890123\n",
+  "stdout": "ERR\n",
+  "exit_status": 1
+ },
+ {
+  "name": "case 35",
+  "stdin": "0000000000000\n1\n",
+  "stdout": "ERR\n",
+  "exit_status": 1
+ },
+ {
+  "name": "case 36",
+  "stdin": "123456789012\n1\n",
+  "stdout": "123456789013\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 37",
+  "stdin": "1\n123456789012\n",
+  "stdout": "123456789013\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 38",
+  "stdin": "\u0663\n5\n",
+  "stdout": "ERR\n",
+  "exit_status": 1
+ },
+ {
+  "name": "case 39",
+  "stdin": "1.5\n2\n",
+  "stdout": "ERR\n",
+  "exit_status": 1
+ },
+ {
+  "name": "case 40",
+  "stdin": "0x10\n1\n",
+  "stdout": "ERR\n",
+  "exit_status": 1
+ },
+ {
+  "name": "case 41",
+  "stdin": "9999999999999999999999999999999999999999999999999999999999999999999999\n1\n",
+  "stdout": "ERR\n",
+  "exit_status": 1
+ },
+ {
+  "name": "case 42",
+  "stdin": "12",
+  "stdout": "ERR\n",
+  "exit_status": 1
+ },
+ {
+  "name": "case 43",
+  "stdin": "999999999999\n36819\n",
+  "stdout": "OVERFLOW\n",
+  "exit_status": 2
+ },
+ {
+  "name": "case 44",
+  "stdin": "9\n1299722\n",
+  "stdout": "1299731\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 45",
+  "stdin": "2245\n3832\n",
+  "stdout": "6077\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 46",
+  "stdin": "999999\n9095\n",
+  "stdout": "1009094\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 47",
+  "stdin": "52772\n04056086\n",
+  "stdout": "4108858\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 48",
+  "stdin": "7029313758\n5\n",
+  "stdout": "7029313763\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 49",
+  "stdin": "99999\n5522563563\n",
+  "stdout": "5522663562\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 50",
+  "stdin": "788532001\n9660\n",
+  "stdout": "788541661\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 51",
+  "stdin": "99999\n55\n",
+  "stdout": "100054\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 52",
+  "stdin": "132468\n025304213\n",
+  "stdout": "25436681\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 53",
+  "stdin": "95125520802\n65675\n",
+  "stdout": "95125586477\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 54",
+  "stdin": "99999999999\n634275\n",
+  "stdout": "100000634274\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 55",
+  "stdin": "9999999999\n1360\n",
+  "stdout": "10000001359\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 56",
+  "stdin": "9999999999\n601\n",
+  "stdout": "10000000600\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 57",
+  "stdin": "357719241211\n14673376\n",
+  "stdout": "357733914587\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 58",
+  "stdin": "502987\n626136\n",
+  "stdout": "1129123\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 59",
+  "stdin": "992639\n9904367\n",
+  "stdout": "10897006\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 60",
+  "stdin": "57\n01404498\n",
+  "stdout": "1404555\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 61",
+  "stdin": "889776570\n22230360051\n",
+  "stdout": "23120136621\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 62",
+  "stdin": "9152760795\n5941883\n",
+  "stdout": "9158702678\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 63",
+  "stdin": "99\n7901736\n",
+  "stdout": "7901835\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 64",
+  "stdin": "61599825966\n6\n",
+  "stdout": "61599825972\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 65",
+  "stdin": "3\n66216\n",
+  "stdout": "66219\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 66",
+  "stdin": "076517\n401\n",
+  "stdout": "76918\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 67",
+  "stdin": "3231\n9670\n",
+  "stdout": "12901\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 68",
+  "stdin": "9\n20373\n",
+  "stdout": "20382\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 69",
+  "stdin": "3\n7567334348\n",
+  "stdout": "7567334351\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 70",
+  "stdin": "99999\n358682029477\n",
+  "stdout": "358682129476\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 71",
+  "stdin": "371703076004\n67\n",
+  "stdout": "371703076071\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 72",
+  "stdin": "07055500772\n1547\n",
+  "stdout": "7055502319\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 73",
+  "stdin": "414566\n11\n",
+  "stdout": "414577\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 74",
+  "stdin": "23075317\n541429\n",
+  "stdout": "23616746\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 75",
+  "stdin": "23953834627\n56\n",
+  "stdout": "23953834683\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 76",
+  "stdin": "99999999999\n25850587066\n",
+  "stdout": "125850587065\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 77",
+  "stdin": "593280338481\n042893916\n",
+  "stdout": "593323232397\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 78",
+  "stdin": "99\n983411\n",
+  "stdout": "983510\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 79",
+  "stdin": "1905318\n7195308\n",
+  "stdout": "9100626\n",
+  "exit_status": 0
+ },
+ {
+  "name": "case 80",
+  "stdin": "9\n8533737409\n",
+  "stdout": "8533737418\n",
+  "exit_status": 0
+ }
+]

@@ -1,0 +1,27 @@
+; Hashes the six bytes of the data segment, prints the hash, then prints the bytes as text.
+        movi r0, 5381
+        movi r1, 0
+        movi r2, 6
+        movi r3, 1
+loop:   ldb  r4, [r1]
+        call mix
+        add  r1, r3
+        cmp  r1, r2
+        jnz  loop
+        out  r0
+        movi r1, 0
+text:   ldb  r4, [r1]
+        outc r4
+        add  r1, r3
+        cmp  r1, r2
+        jnz  text
+        movi r5, 10
+        outc r5
+        halt
+; h = h * 33 xor c
+mix:    mov  r6, r0
+        shl  r6, 5
+        add  r0, r6
+        xor  r0, r4
+        ret
+.data "vmcore"

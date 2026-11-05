@@ -1,0 +1,18 @@
+name: Content error
+description: Report a technical mistake, broken example or unclear explanation.
+labels: ["content"]
+body:
+  - type: input
+    id: location
+    attributes:
+      label: Page or file
+      placeholder: modules/05-arithmetic-and-logic/README.md
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong
+      description: Include expected and actual behavior, and the language of the page if it is a translation.
+    validations:
+      required: true

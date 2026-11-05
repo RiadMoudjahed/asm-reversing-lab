@@ -1,0 +1,26 @@
+{
+  "register_a": "high",
+  "immediate": "little",
+  "opcodes": {
+    "movi": {"code": "0x5b", "length": 4},
+    "mov": {"code": "0xc2", "length": 2},
+    "add": {"code": "0x17", "length": 2},
+    "sub": {"code": "0x8e", "length": 2},
+    "mul": {"code": "0x34", "length": 2},
+    "xor": {"code": "0xe9", "length": 2},
+    "and": {"code": "0x61", "length": 2},
+    "shl": {"code": "0xa5", "length": 2},
+    "shr": {"code": "0x0d", "length": 2},
+    "cmp": {"code": "0x7a", "length": 2},
+    "jmp": {"code": "0xf3", "length": 3},
+    "jz": {"code": "0x42", "length": 3},
+    "jnz": {"code": "0xb8", "length": 3},
+    "call": {"code": "0x29", "length": 3},
+    "ret": {"code": "0xd6", "length": 1},
+    "ldb": {"code": "0x93", "length": 2},
+    "stb": {"code": "0x6c", "length": 2},
+    "out": {"code": "0xfc", "length": 2},
+    "outc": {"code": "0x05", "length": 2},
+    "halt": {"code": "0xa0", "length": 1}
+  }
+}

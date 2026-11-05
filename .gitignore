@@ -1,0 +1,21 @@
+# Build output
+build/
+*.o
+*.obj
+*.lst
+*.map
+# Learner work and scratch files
+*.swp
+*~
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+node_modules/
+# Ghidra projects and debugger history
+*.gpr
+*.rep/
+.gdb_history
+# Keep committed challenge binaries (exercises/*/bin/) despite the rules above
+!exercises/*/bin/*
+obj/

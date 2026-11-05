@@ -1,0 +1,372 @@
+[
+ {
+  "name": "strlen 0",
+  "input": "strlen 0",
+  "expected": "OK"
+ },
+ {
+  "name": "strlen 1",
+  "input": "strlen 1",
+  "expected": "OK"
+ },
+ {
+  "name": "strlen 2",
+  "input": "strlen 2",
+  "expected": "OK"
+ },
+ {
+  "name": "strlen 7",
+  "input": "strlen 7",
+  "expected": "OK"
+ },
+ {
+  "name": "strlen 8",
+  "input": "strlen 8",
+  "expected": "OK"
+ },
+ {
+  "name": "strlen 9",
+  "input": "strlen 9",
+  "expected": "OK"
+ },
+ {
+  "name": "strlen 15",
+  "input": "strlen 15",
+  "expected": "OK"
+ },
+ {
+  "name": "strlen 16",
+  "input": "strlen 16",
+  "expected": "OK"
+ },
+ {
+  "name": "strlen 17",
+  "input": "strlen 17",
+  "expected": "OK"
+ },
+ {
+  "name": "strlen 255",
+  "input": "strlen 255",
+  "expected": "OK"
+ },
+ {
+  "name": "strlen 256",
+  "input": "strlen 256",
+  "expected": "OK"
+ },
+ {
+  "name": "strlen 1000",
+  "input": "strlen 1000",
+  "expected": "OK"
+ },
+ {
+  "name": "strlen 4095",
+  "input": "strlen 4095",
+  "expected": "OK"
+ },
+ {
+  "name": "strlen 4096",
+  "input": "strlen 4096",
+  "expected": "OK"
+ },
+ {
+  "name": "strlen 5000",
+  "input": "strlen 5000",
+  "expected": "OK"
+ },
+ {
+  "name": "strlen 10000",
+  "input": "strlen 10000",
+  "expected": "OK"
+ },
+ {
+  "name": "memchr 8 120 0",
+  "input": "memchr 8 120 0",
+  "expected": "OK"
+ },
+ {
+  "name": "memchr 8 120 7",
+  "input": "memchr 8 120 7",
+  "expected": "OK"
+ },
+ {
+  "name": "memchr 8 120 3",
+  "input": "memchr 8 120 3",
+  "expected": "OK"
+ },
+ {
+  "name": "memchr 8 120 -1",
+  "input": "memchr 8 120 -1",
+  "expected": "OK"
+ },
+ {
+  "name": "memchr 1 65 0",
+  "input": "memchr 1 65 0",
+  "expected": "OK"
+ },
+ {
+  "name": "memchr 1 65 -1",
+  "input": "memchr 1 65 -1",
+  "expected": "OK"
+ },
+ {
+  "name": "memchr 0 65 -1",
+  "input": "memchr 0 65 -1",
+  "expected": "OK"
+ },
+ {
+  "name": "memchr 16 0 5",
+  "input": "memchr 16 0 5",
+  "expected": "OK"
+ },
+ {
+  "name": "memchr 16 0 -1",
+  "input": "memchr 16 0 -1",
+  "expected": "OK"
+ },
+ {
+  "name": "memchr 16 255 15",
+  "input": "memchr 16 255 15",
+  "expected": "OK"
+ },
+ {
+  "name": "memchr 16 321 9",
+  "input": "memchr 16 321 9",
+  "expected": "OK"
+ },
+ {
+  "name": "memchr 100 200 99",
+  "input": "memchr 100 200 99",
+  "expected": "OK"
+ },
+ {
+  "name": "memchr 100 200 -1",
+  "input": "memchr 100 200 -1",
+  "expected": "OK"
+ },
+ {
+  "name": "memchr 4096 77 4095",
+  "input": "memchr 4096 77 4095",
+  "expected": "OK"
+ },
+ {
+  "name": "memchr 4096 77 -1",
+  "input": "memchr 4096 77 -1",
+  "expected": "OK"
+ },
+ {
+  "name": "memchr 5000 1 2500",
+  "input": "memchr 5000 1 2500",
+  "expected": "OK"
+ },
+ {
+  "name": "memchr 3 128 1",
+  "input": "memchr 3 128 1",
+  "expected": "OK"
+ },
+ {
+  "name": "memcpy 0",
+  "input": "memcpy 0",
+  "expected": "OK"
+ },
+ {
+  "name": "memcpy 1",
+  "input": "memcpy 1",
+  "expected": "OK"
+ },
+ {
+  "name": "memcpy 2",
+  "input": "memcpy 2",
+  "expected": "OK"
+ },
+ {
+  "name": "memcpy 7",
+  "input": "memcpy 7",
+  "expected": "OK"
+ },
+ {
+  "name": "memcpy 8",
+  "input": "memcpy 8",
+  "expected": "OK"
+ },
+ {
+  "name": "memcpy 9",
+  "input": "memcpy 9",
+  "expected": "OK"
+ },
+ {
+  "name": "memcpy 15",
+  "input": "memcpy 15",
+  "expected": "OK"
+ },
+ {
+  "name": "memcpy 16",
+  "input": "memcpy 16",
+  "expected": "OK"
+ },
+ {
+  "name": "memcpy 31",
+  "input": "memcpy 31",
+  "expected": "OK"
+ },
+ {
+  "name": "memcpy 100",
+  "input": "memcpy 100",
+  "expected": "OK"
+ },
+ {
+  "name": "memcpy 255",
+  "input": "memcpy 255",
+  "expected": "OK"
+ },
+ {
+  "name": "memcpy 4096",
+  "input": "memcpy 4096",
+  "expected": "OK"
+ },
+ {
+  "name": "memcpy 5000",
+  "input": "memcpy 5000",
+  "expected": "OK"
+ },
+ {
+  "name": "memmove 10 1",
+  "input": "memmove 10 1",
+  "expected": "OK"
+ },
+ {
+  "name": "memmove 10 2",
+  "input": "memmove 10 2",
+  "expected": "OK"
+ },
+ {
+  "name": "memmove 10 5",
+  "input": "memmove 10 5",
+  "expected": "OK"
+ },
+ {
+  "name": "memmove 10 9",
+  "input": "memmove 10 9",
+  "expected": "OK"
+ },
+ {
+  "name": "memmove 10 10",
+  "input": "memmove 10 10",
+  "expected": "OK"
+ },
+ {
+  "name": "memmove 10 11",
+  "input": "memmove 10 11",
+  "expected": "OK"
+ },
+ {
+  "name": "memmove 10 100",
+  "input": "memmove 10 100",
+  "expected": "OK"
+ },
+ {
+  "name": "memmove 10 -1",
+  "input": "memmove 10 -1",
+  "expected": "OK"
+ },
+ {
+  "name": "memmove 10 -2",
+  "input": "memmove 10 -2",
+  "expected": "OK"
+ },
+ {
+  "name": "memmove 10 -5",
+  "input": "memmove 10 -5",
+  "expected": "OK"
+ },
+ {
+  "name": "memmove 10 -9",
+  "input": "memmove 10 -9",
+  "expected": "OK"
+ },
+ {
+  "name": "memmove 10 -10",
+  "input": "memmove 10 -10",
+  "expected": "OK"
+ },
+ {
+  "name": "memmove 10 -11",
+  "input": "memmove 10 -11",
+  "expected": "OK"
+ },
+ {
+  "name": "memmove 10 -100",
+  "input": "memmove 10 -100",
+  "expected": "OK"
+ },
+ {
+  "name": "memmove 1 1",
+  "input": "memmove 1 1",
+  "expected": "OK"
+ },
+ {
+  "name": "memmove 1 -1",
+  "input": "memmove 1 -1",
+  "expected": "OK"
+ },
+ {
+  "name": "memmove 0 5",
+  "input": "memmove 0 5",
+  "expected": "OK"
+ },
+ {
+  "name": "memmove 0 -5",
+  "input": "memmove 0 -5",
+  "expected": "OK"
+ },
+ {
+  "name": "memmove 1000 1",
+  "input": "memmove 1000 1",
+  "expected": "OK"
+ },
+ {
+  "name": "memmove 1000 -1",
+  "input": "memmove 1000 -1",
+  "expected": "OK"
+ },
+ {
+  "name": "memmove 1000 500",
+  "input": "memmove 1000 500",
+  "expected": "OK"
+ },
+ {
+  "name": "memmove 1000 -500",
+  "input": "memmove 1000 -500",
+  "expected": "OK"
+ },
+ {
+  "name": "memmove 4096 3",
+  "input": "memmove 4096 3",
+  "expected": "OK"
+ },
+ {
+  "name": "memmove 4096 -3",
+  "input": "memmove 4096 -3",
+  "expected": "OK"
+ },
+ {
+  "name": "memmove 5000 2500",
+  "input": "memmove 5000 2500",
+  "expected": "OK"
+ },
+ {
+  "name": "memmove 5000 -2500",
+  "input": "memmove 5000 -2500",
+  "expected": "OK"
+ },
+ {
+  "name": "memmove 64 0",
+  "input": "memmove 64 0",
+  "expected": "OK"
+ },
+ {
+  "name": "memmove 7 0",
+  "input": "memmove 7 0",
+  "expected": "OK"
+ }
+]

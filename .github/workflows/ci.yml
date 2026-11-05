@@ -1,0 +1,31 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+
+jobs:
+  checks:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build lab image
+        run: make image
+      - name: Lint (markdown, links, spelling, no-emoji)
+        run: make lint
+      - name: Build module examples
+        run: make build
+      - name: Test Markdown snippets
+        run: make test-snippets
+      - name: Verify reference solutions
+        run: make verify
+      - name: Reproducible challenge builds
+        run: make repro
+      - name: Translation status
+        run: python3 tools/i18n_check.py
+      - name: Strict translation check on release tags
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: python3 tools/i18n_check.py --strict

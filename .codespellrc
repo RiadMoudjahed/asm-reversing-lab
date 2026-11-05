@@ -1,0 +1,3 @@
+[codespell]
+# x86 instruction mnemonics and short test strings that look like misspellings
+ignore-words-list = daa,das,aaa,aas,aam,aad,abd

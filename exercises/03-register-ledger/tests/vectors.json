@@ -1,0 +1,87 @@
+[
+  {
+    "name": "Part 1: borrow, negative",
+    "input": "sub 37000 40000",
+    "expected": "5 -3000"
+  },
+  {
+    "name": "no 64-bit carry for a 32-bit sum",
+    "input": "add 4294967295 1",
+    "expected": "0 4294967296"
+  },
+  {
+    "name": "signed overflow, no carry",
+    "input": "add 9223372036854775807 1",
+    "expected": "12 -9223372036854775808"
+  },
+  {
+    "name": "carry and zero, no overflow",
+    "input": "add -1 1",
+    "expected": "3 0"
+  },
+  {
+    "name": "plain addition",
+    "input": "add 5 7",
+    "expected": "0 12"
+  },
+  {
+    "name": "zero",
+    "input": "add 0 0",
+    "expected": "2 0"
+  },
+  {
+    "name": "negative overflow, carry, zero",
+    "input": "add -9223372036854775808 -9223372036854775808",
+    "expected": "11 0"
+  },
+  {
+    "name": "negative overflow with carry",
+    "input": "add -9223372036854775808 -1",
+    "expected": "9 9223372036854775807"
+  },
+  {
+    "name": "negative sum, carry, no overflow",
+    "input": "add -5 -7",
+    "expected": "5 -12"
+  },
+  {
+    "name": "equal operands",
+    "input": "sub 5 5",
+    "expected": "2 0"
+  },
+  {
+    "name": "borrow",
+    "input": "sub 5 7",
+    "expected": "5 -2"
+  },
+  {
+    "name": "no borrow",
+    "input": "sub 7 5",
+    "expected": "0 2"
+  },
+  {
+    "name": "signed overflow on subtract",
+    "input": "sub -9223372036854775808 1",
+    "expected": "8 9223372036854775807"
+  },
+  {
+    "name": "signed overflow, borrow",
+    "input": "sub 9223372036854775807 -1",
+    "expected": "13 -9223372036854775808"
+  },
+  {
+    "name": "negating the most negative value",
+    "input": "sub 0 -9223372036854775808",
+    "expected": "13 -9223372036854775808"
+  },
+  {
+    "name": "negative equal operands",
+    "input": "sub -1 -1",
+    "expected": "2 0"
+  },
+  {
+    "name": "extreme operands",
+    "input": "sub -9223372036854775808 9223372036854775807",
+    "expected": "8 1"
+  }
+]

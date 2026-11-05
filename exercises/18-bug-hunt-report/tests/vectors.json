@@ -1,0 +1,992 @@
+[
+ {
+  "name": "empty list",
+  "input": "0000",
+  "expected": "0 name=00000000000000000000000000000000 sum=0 tags=0,0,0,0,0,0,0,0 blob=0 ok"
+ },
+ {
+  "name": "empty buffer",
+  "input": "-",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "one byte",
+  "input": "00",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "name of 0 bytes",
+  "input": "01000000",
+  "expected": "1 name=00000000000000000000000000000000 sum=0 tags=0,0,0,0,0,0,0,0 blob=0 ok"
+ },
+ {
+  "name": "name of 1 bytes",
+  "input": "0101410000",
+  "expected": "1 name=41000000000000000000000000000000 sum=0 tags=0,0,0,0,0,0,0,0 blob=0 ok"
+ },
+ {
+  "name": "name of 5 bytes",
+  "input": "010541424344450000",
+  "expected": "1 name=41424344450000000000000000000000 sum=0 tags=0,0,0,0,0,0,0,0 blob=0 ok"
+ },
+ {
+  "name": "name of 15 bytes",
+  "input": "010f4142434445464748494a4b4c4d4e4f0000",
+  "expected": "1 name=4142434445464748494a4b4c4d4e4f00 sum=0 tags=0,0,0,0,0,0,0,0 blob=0 ok"
+ },
+ {
+  "name": "name replaced by a shorter one",
+  "input": "010a6162636465666768696a010278790000",
+  "expected": "2 name=78790000000000000000000000000000 sum=0 tags=0,0,0,0,0,0,0,0 blob=0 ok"
+ },
+ {
+  "name": "name with embedded zero",
+  "input": "010561620063640000",
+  "expected": "1 name=61620063640000000000000000000000 sum=0 tags=0,0,0,0,0,0,0,0 blob=0 ok"
+ },
+ {
+  "name": "name of 16 bytes is rejected",
+  "input": "01104e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e0000",
+  "expected": "-2 ok"
+ },
+ {
+  "name": "name of 17 bytes is rejected",
+  "input": "01114e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e0000",
+  "expected": "-2 ok"
+ },
+ {
+  "name": "name of 40 bytes is rejected",
+  "input": "01284e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e0000",
+  "expected": "-2 ok"
+ },
+ {
+  "name": "name of 255 bytes is rejected",
+  "input": "01ff4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e4e0000",
+  "expected": "-2 ok"
+ },
+ {
+  "name": "no values",
+  "input": "02000000",
+  "expected": "1 name=00000000000000000000000000000000 sum=0 tags=0,0,0,0,0,0,0,0 blob=0 ok"
+ },
+ {
+  "name": "one value",
+  "input": "0204050000000000",
+  "expected": "1 name=00000000000000000000000000000000 sum=5 tags=0,0,0,0,0,0,0,0 blob=0 ok"
+ },
+ {
+  "name": "negative values",
+  "input": "020cfffffffffefffffffdffffff0000",
+  "expected": "1 name=00000000000000000000000000000000 sum=-6 tags=0,0,0,0,0,0,0,0 blob=0 ok"
+ },
+ {
+  "name": "eight largest values",
+  "input": "0220ffffff7fffffff7fffffff7fffffff7fffffff7fffffff7fffffff7fffffff7f0000",
+  "expected": "1 name=00000000000000000000000000000000 sum=17179869176 tags=0,0,0,0,0,0,0,0 blob=0 ok"
+ },
+ {
+  "name": "eight smallest values",
+  "input": "022000000080000000800000008000000080000000800000008000000080000000800000",
+  "expected": "1 name=00000000000000000000000000000000 sum=-17179869184 tags=0,0,0,0,0,0,0,0 blob=0 ok"
+ },
+ {
+  "name": "two value records",
+  "input": "0208010000000200000002080a000000ecffffff0000",
+  "expected": "2 name=00000000000000000000000000000000 sum=-7 tags=0,0,0,0,0,0,0,0 blob=0 ok"
+ },
+ {
+  "name": "values of 1 bytes are rejected",
+  "input": "0201010000",
+  "expected": "-3 ok"
+ },
+ {
+  "name": "values of 2 bytes are rejected",
+  "input": "020201010000",
+  "expected": "-3 ok"
+ },
+ {
+  "name": "values of 3 bytes are rejected",
+  "input": "02030101010000",
+  "expected": "-3 ok"
+ },
+ {
+  "name": "values of 5 bytes are rejected",
+  "input": "020501010101010000",
+  "expected": "-3 ok"
+ },
+ {
+  "name": "values of 6 bytes are rejected",
+  "input": "02060101010101010000",
+  "expected": "-3 ok"
+ },
+ {
+  "name": "values of 33 bytes are rejected",
+  "input": "02210101010101010101010101010101010101010101010101010101010101010101010000",
+  "expected": "-3 ok"
+ },
+ {
+  "name": "values of 36 bytes are rejected",
+  "input": "02240101010101010101010101010101010101010101010101010101010101010101010101010000",
+  "expected": "-3 ok"
+ },
+ {
+  "name": "values of 40 bytes are rejected",
+  "input": "0228010101010101010101010101010101010101010101010101010101010101010101010101010101010000",
+  "expected": "-3 ok"
+ },
+ {
+  "name": "values of 100 bytes are rejected",
+  "input": "0264010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010000",
+  "expected": "-3 ok"
+ },
+ {
+  "name": "values of 127 bytes are rejected",
+  "input": "027f010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010000",
+  "expected": "-3 ok"
+ },
+ {
+  "name": "values of 128 bytes are rejected",
+  "input": "028001010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010000",
+  "expected": "-3 ok"
+ },
+ {
+  "name": "values of 129 bytes are rejected",
+  "input": "02810101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010000",
+  "expected": "-3 ok"
+ },
+ {
+  "name": "values of 130 bytes are rejected",
+  "input": "0282010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010000",
+  "expected": "-3 ok"
+ },
+ {
+  "name": "values of 200 bytes are rejected",
+  "input": "02c801010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010000",
+  "expected": "-3 ok"
+ },
+ {
+  "name": "values of 255 bytes are rejected",
+  "input": "02ff0101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010000",
+  "expected": "-3 ok"
+ },
+ {
+  "name": "tags",
+  "input": "030a000101020202070707070000",
+  "expected": "1 name=00000000000000000000000000000000 sum=0 tags=1,2,3,0,0,0,0,4 blob=0 ok"
+ },
+ {
+  "name": "no tags",
+  "input": "03000000",
+  "expected": "1 name=00000000000000000000000000000000 sum=0 tags=0,0,0,0,0,0,0,0 blob=0 ok"
+ },
+ {
+  "name": "two tag records",
+  "input": "03020000030200050000",
+  "expected": "2 name=00000000000000000000000000000000 sum=0 tags=3,0,0,0,0,1,0,0 blob=0 ok"
+ },
+ {
+  "name": "tag 8 is rejected",
+  "input": "030201080000",
+  "expected": "-4 ok"
+ },
+ {
+  "name": "tag 9 is rejected",
+  "input": "030201090000",
+  "expected": "-4 ok"
+ },
+ {
+  "name": "tag 100 is rejected",
+  "input": "030201640000",
+  "expected": "-4 ok"
+ },
+ {
+  "name": "tag 255 is rejected",
+  "input": "030201ff0000",
+  "expected": "-4 ok"
+ },
+ {
+  "name": "tag 8 after valid tags",
+  "input": "03030707080000",
+  "expected": "-4 ok"
+ },
+ {
+  "name": "empty blob",
+  "input": "0401000000",
+  "expected": "1 name=00000000000000000000000000000000 sum=0 tags=0,0,0,0,0,0,0,0 blob=0 ok"
+ },
+ {
+  "name": "one-item blob",
+  "input": "040501010203040000",
+  "expected": "1 name=00000000000000000000000000000000 sum=0 tags=0,0,0,0,0,0,0,0 blob=10 ok"
+ },
+ {
+  "name": "blob of 63 items",
+  "input": "04fd3f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafb0000",
+  "expected": "1 name=00000000000000000000000000000000 sum=0 tags=0,0,0,0,0,0,0,0 blob=31626 ok"
+ },
+ {
+  "name": "blob of 63 items of 255",
+  "input": "04fd3fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0000",
+  "expected": "1 name=00000000000000000000000000000000 sum=0 tags=0,0,0,0,0,0,0,0 blob=64260 ok"
+ },
+ {
+  "name": "second blob replaces the first",
+  "input": "04050101010101040501020202020000",
+  "expected": "2 name=00000000000000000000000000000000 sum=0 tags=0,0,0,0,0,0,0,0 blob=8 ok"
+ },
+ {
+  "name": "reset",
+  "input": "0405010101010105000000",
+  "expected": "2 name=00000000000000000000000000000000 sum=0 tags=0,0,0,0,0,0,0,0 blob=0 ok"
+ },
+ {
+  "name": "reset then blob",
+  "input": "040501010101010500040501030303030000",
+  "expected": "3 name=00000000000000000000000000000000 sum=0 tags=0,0,0,0,0,0,0,0 blob=12 ok"
+ },
+ {
+  "name": "reset twice",
+  "input": "050005000000",
+  "expected": "2 name=00000000000000000000000000000000 sum=0 tags=0,0,0,0,0,0,0,0 blob=0 ok"
+ },
+ {
+  "name": "reset without blob",
+  "input": "05000000",
+  "expected": "1 name=00000000000000000000000000000000 sum=0 tags=0,0,0,0,0,0,0,0 blob=0 ok"
+ },
+ {
+  "name": "blob count 0 with length 0",
+  "input": "04000000",
+  "expected": "-5 ok"
+ },
+ {
+  "name": "blob count 0 with length 2",
+  "input": "040200000000",
+  "expected": "-5 ok"
+ },
+ {
+  "name": "blob count 1 with length 4",
+  "input": "0404010000000000",
+  "expected": "-5 ok"
+ },
+ {
+  "name": "blob count 1 with length 6",
+  "input": "04060100000000000000",
+  "expected": "-5 ok"
+ },
+ {
+  "name": "blob count 2 with length 8",
+  "input": "040802000000000000000000",
+  "expected": "-5 ok"
+ },
+ {
+  "name": "blob count 63 with length 251",
+  "input": "04fb3f000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "expected": "-5 ok"
+ },
+ {
+  "name": "blob count 63 with length 253",
+  "input": "04fd3f0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "expected": "1 name=00000000000000000000000000000000 sum=0 tags=0,0,0,0,0,0,0,0 blob=0 ok"
+ },
+ {
+  "name": "blob count 64 with length 255",
+  "input": "04ff4000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "expected": "-5 ok"
+ },
+ {
+  "name": "blob count 64 with length 1",
+  "input": "0401400000",
+  "expected": "-5 ok"
+ },
+ {
+  "name": "blob count 255 with length 255",
+  "input": "04ffff00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "expected": "-5 ok"
+ },
+ {
+  "name": "blob count 255 with length 4",
+  "input": "0404ff0000000000",
+  "expected": "-5 ok"
+ },
+ {
+  "name": "blob count 16 with length 65",
+  "input": "044110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "expected": "1 name=00000000000000000000000000000000 sum=0 tags=0,0,0,0,0,0,0,0 blob=0 ok"
+ },
+ {
+  "name": "blob with no payload",
+  "input": "04000000",
+  "expected": "-5 ok"
+ },
+ {
+  "name": "reset with length 1",
+  "input": "0501000000",
+  "expected": "-5 ok"
+ },
+ {
+  "name": "unknown type 6",
+  "input": "06036162630000",
+  "expected": "-6 ok"
+ },
+ {
+  "name": "unknown type 7",
+  "input": "07036162630000",
+  "expected": "-6 ok"
+ },
+ {
+  "name": "unknown type 8",
+  "input": "08036162630000",
+  "expected": "-6 ok"
+ },
+ {
+  "name": "unknown type 127",
+  "input": "7f036162630000",
+  "expected": "-6 ok"
+ },
+ {
+  "name": "unknown type 255",
+  "input": "ff036162630000",
+  "expected": "-6 ok"
+ },
+ {
+  "name": "type 6 with no payload",
+  "input": "06000000",
+  "expected": "-6 ok"
+ },
+ {
+  "name": "mixed valid stream",
+  "input": "010873656e736f722d37020c64000000e2ffffff050000000308000102030405060704090201020304050607080000",
+  "expected": "4 name=73656e736f722d370000000000000000 sum=75 tags=1,1,1,1,1,1,1,1 blob=36 ok"
+ },
+ {
+  "name": "long valid stream",
+  "input": "010773746174696f6e0210010000000200000003000000040000000303010203040d03000102030405060708090a0b0500040501090909090000",
+  "expected": "6 name=73746174696f6e000000000000000000 sum=10 tags=0,1,1,1,0,0,0,0 blob=36 ok"
+ },
+ {
+  "name": "long stream cut after 0 bytes",
+  "input": "-",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 1 bytes",
+  "input": "01",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 2 bytes",
+  "input": "0107",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 3 bytes",
+  "input": "010773",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 4 bytes",
+  "input": "01077374",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 5 bytes",
+  "input": "0107737461",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 6 bytes",
+  "input": "010773746174",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 7 bytes",
+  "input": "01077374617469",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 8 bytes",
+  "input": "010773746174696f",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 9 bytes",
+  "input": "010773746174696f6e",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 10 bytes",
+  "input": "010773746174696f6e02",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 11 bytes",
+  "input": "010773746174696f6e0210",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 12 bytes",
+  "input": "010773746174696f6e021001",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 13 bytes",
+  "input": "010773746174696f6e02100100",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 14 bytes",
+  "input": "010773746174696f6e0210010000",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 15 bytes",
+  "input": "010773746174696f6e021001000000",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 16 bytes",
+  "input": "010773746174696f6e02100100000002",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 17 bytes",
+  "input": "010773746174696f6e0210010000000200",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 18 bytes",
+  "input": "010773746174696f6e021001000000020000",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 19 bytes",
+  "input": "010773746174696f6e02100100000002000000",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 20 bytes",
+  "input": "010773746174696f6e0210010000000200000003",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 21 bytes",
+  "input": "010773746174696f6e021001000000020000000300",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 22 bytes",
+  "input": "010773746174696f6e02100100000002000000030000",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 23 bytes",
+  "input": "010773746174696f6e0210010000000200000003000000",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 24 bytes",
+  "input": "010773746174696f6e021001000000020000000300000004",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 25 bytes",
+  "input": "010773746174696f6e02100100000002000000030000000400",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 26 bytes",
+  "input": "010773746174696f6e0210010000000200000003000000040000",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 27 bytes",
+  "input": "010773746174696f6e021001000000020000000300000004000000",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 28 bytes",
+  "input": "010773746174696f6e02100100000002000000030000000400000003",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 29 bytes",
+  "input": "010773746174696f6e0210010000000200000003000000040000000303",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 30 bytes",
+  "input": "010773746174696f6e021001000000020000000300000004000000030301",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 31 bytes",
+  "input": "010773746174696f6e02100100000002000000030000000400000003030102",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 32 bytes",
+  "input": "010773746174696f6e0210010000000200000003000000040000000303010203",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 33 bytes",
+  "input": "010773746174696f6e021001000000020000000300000004000000030301020304",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 34 bytes",
+  "input": "010773746174696f6e0210010000000200000003000000040000000303010203040d",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 35 bytes",
+  "input": "010773746174696f6e0210010000000200000003000000040000000303010203040d03",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 36 bytes",
+  "input": "010773746174696f6e0210010000000200000003000000040000000303010203040d0300",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 37 bytes",
+  "input": "010773746174696f6e0210010000000200000003000000040000000303010203040d030001",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 38 bytes",
+  "input": "010773746174696f6e0210010000000200000003000000040000000303010203040d03000102",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 39 bytes",
+  "input": "010773746174696f6e0210010000000200000003000000040000000303010203040d0300010203",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 40 bytes",
+  "input": "010773746174696f6e0210010000000200000003000000040000000303010203040d030001020304",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 41 bytes",
+  "input": "010773746174696f6e0210010000000200000003000000040000000303010203040d03000102030405",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 42 bytes",
+  "input": "010773746174696f6e0210010000000200000003000000040000000303010203040d0300010203040506",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 43 bytes",
+  "input": "010773746174696f6e0210010000000200000003000000040000000303010203040d030001020304050607",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 44 bytes",
+  "input": "010773746174696f6e0210010000000200000003000000040000000303010203040d03000102030405060708",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 45 bytes",
+  "input": "010773746174696f6e0210010000000200000003000000040000000303010203040d0300010203040506070809",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 46 bytes",
+  "input": "010773746174696f6e0210010000000200000003000000040000000303010203040d03000102030405060708090a",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 47 bytes",
+  "input": "010773746174696f6e0210010000000200000003000000040000000303010203040d03000102030405060708090a0b",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 48 bytes",
+  "input": "010773746174696f6e0210010000000200000003000000040000000303010203040d03000102030405060708090a0b05",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 49 bytes",
+  "input": "010773746174696f6e0210010000000200000003000000040000000303010203040d03000102030405060708090a0b0500",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 50 bytes",
+  "input": "010773746174696f6e0210010000000200000003000000040000000303010203040d03000102030405060708090a0b050004",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 51 bytes",
+  "input": "010773746174696f6e0210010000000200000003000000040000000303010203040d03000102030405060708090a0b05000405",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 52 bytes",
+  "input": "010773746174696f6e0210010000000200000003000000040000000303010203040d03000102030405060708090a0b0500040501",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 53 bytes",
+  "input": "010773746174696f6e0210010000000200000003000000040000000303010203040d03000102030405060708090a0b050004050109",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 54 bytes",
+  "input": "010773746174696f6e0210010000000200000003000000040000000303010203040d03000102030405060708090a0b05000405010909",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 55 bytes",
+  "input": "010773746174696f6e0210010000000200000003000000040000000303010203040d03000102030405060708090a0b0500040501090909",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 56 bytes",
+  "input": "010773746174696f6e0210010000000200000003000000040000000303010203040d03000102030405060708090a0b050004050109090909",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "long stream cut after 57 bytes",
+  "input": "010773746174696f6e0210010000000200000003000000040000000303010203040d03000102030405060708090a0b05000405010909090900",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "bytes after END are ignored",
+  "input": "0000ffffff",
+  "expected": "0 name=00000000000000000000000000000000 sum=0 tags=0,0,0,0,0,0,0,0 blob=0 ok"
+ },
+ {
+  "name": "END with a payload",
+  "input": "0003616263010178",
+  "expected": "0 name=00000000000000000000000000000000 sum=0 tags=0,0,0,0,0,0,0,0 blob=0 ok"
+ },
+ {
+  "name": "END with a payload that is cut",
+  "input": "00056162",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "no END, ends on a record boundary",
+  "input": "0103616263",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "no END, ends after type byte",
+  "input": "010361626303",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "record with length beyond the buffer",
+  "input": "01ff414141414141414141410000",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "last record exactly at the end",
+  "input": "01036162630000",
+  "expected": "1 name=61626300000000000000000000000000 sum=0 tags=0,0,0,0,0,0,0,0 blob=0 ok"
+ },
+ {
+  "name": "random 0",
+  "input": "c7f557838a3327c73827",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "random 1",
+  "input": "010178040501616263ee0000",
+  "expected": "2 name=78000000000000000000000000000000 sum=0 tags=0,0,0,0,0,0,0,0 blob=532 ok"
+ },
+ {
+  "name": "random 2",
+  "input": "-",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "random 3",
+  "input": "cedfa97b54f169f370550885cd0e30a083ac24178615072d",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "random 4",
+  "input": "01036162630204010000005f01020000",
+  "expected": "-6 ok"
+ },
+ {
+  "name": "random 5",
+  "input": "-",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "random 6",
+  "input": "2824",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "random 7",
+  "input": "01017804a701616263640000",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "random 8",
+  "input": "0000",
+  "expected": "0 name=00000000000000000000000000000000 sum=0 tags=0,0,0,0,0,0,0,0 blob=0 ok"
+ },
+ {
+  "name": "random 9",
+  "input": "6ac125c4da171aab",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "random 10",
+  "input": "010773746174696f6e0210c60000000200000003000000040000000303010203040d03000102030405060708090a0b0500040501090909090000",
+  "expected": "6 name=73746174696f6e000000000000000000 sum=207 tags=0,1,1,1,0,0,0,0 blob=36 ok"
+ },
+ {
+  "name": "random 11",
+  "input": "04030404000307030806000702030000",
+  "expected": "-5 ok"
+ },
+ {
+  "name": "random 12",
+  "input": "335efd9965b9bb7515902266b9bb1810077cee575627498012ecbc",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "random 13",
+  "input": "01017804056e616263640000",
+  "expected": "-5 ok"
+ },
+ {
+  "name": "random 14",
+  "input": "010600000604080204030408050000",
+  "expected": "-5 ok"
+ },
+ {
+  "name": "random 15",
+  "input": "684ab7d934241da97771ab77e08073",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "random 16",
+  "input": "01036162630204da0000000301020000",
+  "expected": "3 name=61626300000000000000000000000000 sum=218 tags=0,0,1,0,0,0,0,0 blob=0 ok"
+ },
+ {
+  "name": "random 17",
+  "input": "03050808020005",
+  "expected": "-4 ok"
+ },
+ {
+  "name": "random 18",
+  "input": "fa6b537dfc0da3b600ed6bc3a6cc5705ef6887bb2e772d71796aad743664",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "random 19",
+  "input": "010773746174696f6e0210010000000200000003000000040000000303010203040d03000102030405060708090a0b0500042901090909090000",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "random 20",
+  "input": "011000030800070701040105010603010701040c00070007050307020603060103050407050403",
+  "expected": "-2 ok"
+ },
+ {
+  "name": "random 21",
+  "input": "b13e93a4c8f0aa72017eabbf1d46acf38d286f1ee4a97cf2c78c",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "random 22",
+  "input": "0107739a6174696f6e0210010000000200000003000000040000000303010203040d03000102030405060708090a0b0500040501090909090000",
+  "expected": "6 name=739a6174696f6e000000000000000000 sum=10 tags=0,1,1,1,0,0,0,0 blob=36 ok"
+ },
+ {
+  "name": "random 23",
+  "input": "03130804050202000608070800030206030002080006050307000806020a0405020600000001070604000000",
+  "expected": "-4 ok"
+ },
+ {
+  "name": "random 24",
+  "input": "5c9fa19f64084caef509af261e913af8c129e3ff3382d5960d4c",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "random 25",
+  "input": "250178040501616263640000",
+  "expected": "-6 ok"
+ },
+ {
+  "name": "random 26",
+  "input": "0306050106020706050d0102000104000508000107010003060605000504080000",
+  "expected": "-5 ok"
+ },
+ {
+  "name": "random 27",
+  "input": "68ce0feb2946d9636b38b828f11f21069195f477f7a4e9c804034ec94b66e0c63b89",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "random 28",
+  "input": "010773746174696f6e021001000000020000000300000004ee00000303010203040d03000102030405060708090a0b0500040501090909090000",
+  "expected": "6 name=73746174696f6e000000000000000000 sum=60938 tags=0,1,1,1,0,0,0,0 blob=36 ok"
+ },
+ {
+  "name": "random 29",
+  "input": "030c070106030203050706080802020106030400020803",
+  "expected": "-4 ok"
+ },
+ {
+  "name": "random 30",
+  "input": "e0dc0a4460cf226d2f639661820049146fe1d784481ab1d5b16a1927c9158ba7d5",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "random 31",
+  "input": "010773746174696f6e02100100000002000000030000000400000003030e0203040d03000102030405060708090a0b0500040501090909090000",
+  "expected": "-4 ok"
+ },
+ {
+  "name": "random 32",
+  "input": "030701030708030703",
+  "expected": "-4 ok"
+ },
+ {
+  "name": "random 33",
+  "input": "70a948c88e79d302062ee57fd7ea727786f2dfe947a3f4ea080e161acfba9a18ce8250ac",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "random 34",
+  "input": "010178040501616283640000",
+  "expected": "2 name=78000000000000000000000000000000 sum=0 tags=0,0,0,0,0,0,0,0 blob=426 ok"
+ },
+ {
+  "name": "random 35",
+  "input": "060c040608070607070002060102",
+  "expected": "-6 ok"
+ },
+ {
+  "name": "random 36",
+  "input": "5c02edfaa14062322a77ce24f2c1492fc1",
+  "expected": "-6 ok"
+ },
+ {
+  "name": "random 37",
+  "input": "010178040501616263640050",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "random 38",
+  "input": "03050006080604030c000804010408050500040304",
+  "expected": "-4 ok"
+ },
+ {
+  "name": "random 39",
+  "input": "-",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "random 40",
+  "input": "010773746174696f6e0210010000000200000003000000040000000328010203040d03000102030405060708090a0b0500040501090909090000",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "random 41",
+  "input": "05090601070703020004060000",
+  "expected": "-5 ok"
+ },
+ {
+  "name": "random 42",
+  "input": "2570511bfc831be64872cb",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "random 43",
+  "input": "010178040501616263640005",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "random 44",
+  "input": "-",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "random 45",
+  "input": "771118998d571f57ac202c054c8715119f4d7b19b1ea1496039d50b941814b",
+  "expected": "-6 ok"
+ },
+ {
+  "name": "random 46",
+  "input": "01036172630204010000000301020000",
+  "expected": "3 name=61726300000000000000000000000000 sum=1 tags=0,0,1,0,0,0,0,0 blob=0 ok"
+ },
+ {
+  "name": "random 47",
+  "input": "050a01000504010602050803040c080104020402030803030700060305000603060506050501010000",
+  "expected": "-5 ok"
+ },
+ {
+  "name": "random 48",
+  "input": "886fff3edbbd7f62ad44e21e6ecd40d73b9989539a5afb24f73a50",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "random 49",
+  "input": "010773746174696f6e0210010000000200000003000000040000000303010203040d0300010203048d060708090a0b0500040501090909090000",
+  "expected": "6 name=73746174696f6e000000000000000000 sum=10 tags=0,1,1,1,0,0,0,0 blob=36 ok"
+ },
+ {
+  "name": "random 50",
+  "input": "0000",
+  "expected": "0 name=00000000000000000000000000000000 sum=0 tags=0,0,0,0,0,0,0,0 blob=0 ok"
+ },
+ {
+  "name": "random 51",
+  "input": "446783dcb096ea50088cc35df7f8bbc53976995fbc988a8629",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "random 52",
+  "input": "010178040501c06263640000",
+  "expected": "2 name=78000000000000000000000000000000 sum=0 tags=0,0,0,0,0,0,0,0 blob=489 ok"
+ },
+ {
+  "name": "random 53",
+  "input": "0402030702000000",
+  "expected": "-5 ok"
+ },
+ {
+  "name": "random 54",
+  "input": "f52d014d6a4faf10146f8c2e569d41f8738f",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "random 55",
+  "input": "0103616263029f010000000301020000",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "random 56",
+  "input": "-",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "random 57",
+  "input": "a4957d3ecb97d0",
+  "expected": "-1 ok"
+ },
+ {
+  "name": "random 58",
+  "input": "010773746174696f6e0210010000000200000003000000040000000303010203040d03000102030405060708090a0b0500040501090909090600",
+  "expected": "-6 ok"
+ },
+ {
+  "name": "random 59",
+  "input": "0409020608080500050304010200000514050804010301010602000706070308080603020606030802000000",
+  "expected": "-5 ok"
+ }
+]

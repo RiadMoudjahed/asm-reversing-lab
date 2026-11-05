@@ -1,0 +1,967 @@
+[
+ {
+  "name": "cmd -3 acc 0",
+  "input": "-3 0",
+  "expected": "0"
+ },
+ {
+  "name": "cmd -3 acc 1",
+  "input": "-3 1",
+  "expected": "0"
+ },
+ {
+  "name": "cmd -3 acc 2",
+  "input": "-3 2",
+  "expected": "0"
+ },
+ {
+  "name": "cmd -3 acc 7",
+  "input": "-3 7",
+  "expected": "0"
+ },
+ {
+  "name": "cmd -2 acc 0",
+  "input": "-2 0",
+  "expected": "0"
+ },
+ {
+  "name": "cmd -2 acc 1",
+  "input": "-2 1",
+  "expected": "0"
+ },
+ {
+  "name": "cmd -2 acc 2",
+  "input": "-2 2",
+  "expected": "0"
+ },
+ {
+  "name": "cmd -2 acc 7",
+  "input": "-2 7",
+  "expected": "0"
+ },
+ {
+  "name": "cmd -1 acc 0",
+  "input": "-1 0",
+  "expected": "0"
+ },
+ {
+  "name": "cmd -1 acc 1",
+  "input": "-1 1",
+  "expected": "0"
+ },
+ {
+  "name": "cmd -1 acc 2",
+  "input": "-1 2",
+  "expected": "0"
+ },
+ {
+  "name": "cmd -1 acc 7",
+  "input": "-1 7",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 0 acc 0",
+  "input": "0 0",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 0 acc 1",
+  "input": "0 1",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 0 acc 2",
+  "input": "0 2",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 0 acc 7",
+  "input": "0 7",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 1 acc 0",
+  "input": "1 0",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 1 acc 1",
+  "input": "1 1",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 1 acc 2",
+  "input": "1 2",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 1 acc 7",
+  "input": "1 7",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 2 acc 0",
+  "input": "2 0",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 2 acc 1",
+  "input": "2 1",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 2 acc 2",
+  "input": "2 2",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 2 acc 7",
+  "input": "2 7",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 3 acc 0",
+  "input": "3 0",
+  "expected": "16"
+ },
+ {
+  "name": "cmd 3 acc 1",
+  "input": "3 1",
+  "expected": "19"
+ },
+ {
+  "name": "cmd 3 acc 2",
+  "input": "3 2",
+  "expected": "22"
+ },
+ {
+  "name": "cmd 3 acc 7",
+  "input": "3 7",
+  "expected": "37"
+ },
+ {
+  "name": "cmd 4 acc 0",
+  "input": "4 0",
+  "expected": "1"
+ },
+ {
+  "name": "cmd 4 acc 1",
+  "input": "4 1",
+  "expected": "4"
+ },
+ {
+  "name": "cmd 4 acc 2",
+  "input": "4 2",
+  "expected": "7"
+ },
+ {
+  "name": "cmd 4 acc 7",
+  "input": "4 7",
+  "expected": "22"
+ },
+ {
+  "name": "cmd 5 acc 0",
+  "input": "5 0",
+  "expected": "-2"
+ },
+ {
+  "name": "cmd 5 acc 1",
+  "input": "5 1",
+  "expected": "-1"
+ },
+ {
+  "name": "cmd 5 acc 2",
+  "input": "5 2",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 5 acc 7",
+  "input": "5 7",
+  "expected": "5"
+ },
+ {
+  "name": "cmd 6 acc 0",
+  "input": "6 0",
+  "expected": "86"
+ },
+ {
+  "name": "cmd 6 acc 1",
+  "input": "6 1",
+  "expected": "85"
+ },
+ {
+  "name": "cmd 6 acc 2",
+  "input": "6 2",
+  "expected": "88"
+ },
+ {
+  "name": "cmd 6 acc 7",
+  "input": "6 7",
+  "expected": "83"
+ },
+ {
+  "name": "cmd 7 acc 0",
+  "input": "7 0",
+  "expected": "101"
+ },
+ {
+  "name": "cmd 7 acc 1",
+  "input": "7 1",
+  "expected": "105"
+ },
+ {
+  "name": "cmd 7 acc 2",
+  "input": "7 2",
+  "expected": "109"
+ },
+ {
+  "name": "cmd 7 acc 7",
+  "input": "7 7",
+  "expected": "129"
+ },
+ {
+  "name": "cmd 8 acc 0",
+  "input": "8 0",
+  "expected": "101"
+ },
+ {
+  "name": "cmd 8 acc 1",
+  "input": "8 1",
+  "expected": "102"
+ },
+ {
+  "name": "cmd 8 acc 2",
+  "input": "8 2",
+  "expected": "103"
+ },
+ {
+  "name": "cmd 8 acc 7",
+  "input": "8 7",
+  "expected": "108"
+ },
+ {
+  "name": "cmd 9 acc 0",
+  "input": "9 0",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 9 acc 1",
+  "input": "9 1",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 9 acc 2",
+  "input": "9 2",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 9 acc 7",
+  "input": "9 7",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 10 acc 0",
+  "input": "10 0",
+  "expected": "86"
+ },
+ {
+  "name": "cmd 10 acc 1",
+  "input": "10 1",
+  "expected": "85"
+ },
+ {
+  "name": "cmd 10 acc 2",
+  "input": "10 2",
+  "expected": "88"
+ },
+ {
+  "name": "cmd 10 acc 7",
+  "input": "10 7",
+  "expected": "83"
+ },
+ {
+  "name": "cmd 11 acc 0",
+  "input": "11 0",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 11 acc 1",
+  "input": "11 1",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 11 acc 2",
+  "input": "11 2",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 11 acc 7",
+  "input": "11 7",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 12 acc 0",
+  "input": "12 0",
+  "expected": "1"
+ },
+ {
+  "name": "cmd 12 acc 1",
+  "input": "12 1",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 12 acc 2",
+  "input": "12 2",
+  "expected": "-1"
+ },
+ {
+  "name": "cmd 12 acc 7",
+  "input": "12 7",
+  "expected": "-6"
+ },
+ {
+  "name": "cmd 13 acc 0",
+  "input": "13 0",
+  "expected": "2"
+ },
+ {
+  "name": "cmd 13 acc 1",
+  "input": "13 1",
+  "expected": "2"
+ },
+ {
+  "name": "cmd 13 acc 2",
+  "input": "13 2",
+  "expected": "4"
+ },
+ {
+  "name": "cmd 13 acc 7",
+  "input": "13 7",
+  "expected": "8"
+ },
+ {
+  "name": "cmd 14 acc 0",
+  "input": "14 0",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 14 acc 1",
+  "input": "14 1",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 14 acc 2",
+  "input": "14 2",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 14 acc 7",
+  "input": "14 7",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 15 acc 0",
+  "input": "15 0",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 15 acc 1",
+  "input": "15 1",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 15 acc 2",
+  "input": "15 2",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 15 acc 7",
+  "input": "15 7",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 16 acc 0",
+  "input": "16 0",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 16 acc 1",
+  "input": "16 1",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 16 acc 2",
+  "input": "16 2",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 16 acc 7",
+  "input": "16 7",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 17 acc 0",
+  "input": "17 0",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 17 acc 1",
+  "input": "17 1",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 17 acc 2",
+  "input": "17 2",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 17 acc 7",
+  "input": "17 7",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 18 acc 0",
+  "input": "18 0",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 18 acc 1",
+  "input": "18 1",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 18 acc 2",
+  "input": "18 2",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 18 acc 7",
+  "input": "18 7",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 19 acc 0",
+  "input": "19 0",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 19 acc 1",
+  "input": "19 1",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 19 acc 2",
+  "input": "19 2",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 19 acc 7",
+  "input": "19 7",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 2147483647 acc 0",
+  "input": "2147483647 0",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 2147483647 acc 1",
+  "input": "2147483647 1",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 2147483647 acc 2",
+  "input": "2147483647 2",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 2147483647 acc 7",
+  "input": "2147483647 7",
+  "expected": "0"
+ },
+ {
+  "name": "cmd -2147483648 acc 0",
+  "input": "-2147483648 0",
+  "expected": "0"
+ },
+ {
+  "name": "cmd -2147483648 acc 1",
+  "input": "-2147483648 1",
+  "expected": "0"
+ },
+ {
+  "name": "cmd -2147483648 acc 2",
+  "input": "-2147483648 2",
+  "expected": "0"
+ },
+ {
+  "name": "cmd -2147483648 acc 7",
+  "input": "-2147483648 7",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 100 acc 0",
+  "input": "100 0",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 100 acc 1",
+  "input": "100 1",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 100 acc 2",
+  "input": "100 2",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 100 acc 7",
+  "input": "100 7",
+  "expected": "0"
+ },
+ {
+  "name": "cmd -100 acc 0",
+  "input": "-100 0",
+  "expected": "0"
+ },
+ {
+  "name": "cmd -100 acc 1",
+  "input": "-100 1",
+  "expected": "0"
+ },
+ {
+  "name": "cmd -100 acc 2",
+  "input": "-100 2",
+  "expected": "0"
+ },
+ {
+  "name": "cmd -100 acc 7",
+  "input": "-100 7",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 2147483645 acc 0",
+  "input": "2147483645 0",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 2147483645 acc 1",
+  "input": "2147483645 1",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 2147483645 acc 2",
+  "input": "2147483645 2",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 2147483645 acc 7",
+  "input": "2147483645 7",
+  "expected": "0"
+ },
+ {
+  "name": "cmd -2147483645 acc 0",
+  "input": "-2147483645 0",
+  "expected": "0"
+ },
+ {
+  "name": "cmd -2147483645 acc 1",
+  "input": "-2147483645 1",
+  "expected": "0"
+ },
+ {
+  "name": "cmd -2147483645 acc 2",
+  "input": "-2147483645 2",
+  "expected": "0"
+ },
+ {
+  "name": "cmd -2147483645 acc 7",
+  "input": "-2147483645 7",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 3 acc 2147483647",
+  "input": "3 2147483647",
+  "expected": "-2147483635"
+ },
+ {
+  "name": "cmd 3 acc 10",
+  "input": "3 10",
+  "expected": "46"
+ },
+ {
+  "name": "cmd 4 acc 4294967294",
+  "input": "4 4294967294",
+  "expected": "-5"
+ },
+ {
+  "name": "cmd 4 acc 2147483648",
+  "input": "4 2147483648",
+  "expected": "-2147483647"
+ },
+ {
+  "name": "cmd 5 acc 4294967294",
+  "input": "5 4294967294",
+  "expected": "-4"
+ },
+ {
+  "name": "cmd 5 acc 255",
+  "input": "5 255",
+  "expected": "253"
+ },
+ {
+  "name": "cmd 6 acc 2",
+  "input": "6 2",
+  "expected": "88"
+ },
+ {
+  "name": "cmd 6 acc 85",
+  "input": "6 85",
+  "expected": "1"
+ },
+ {
+  "name": "cmd 7 acc 0",
+  "input": "7 0",
+  "expected": "101"
+ },
+ {
+  "name": "cmd 7 acc 255",
+  "input": "7 255",
+  "expected": "1121"
+ },
+ {
+  "name": "cmd 8 acc 2147483647",
+  "input": "8 2147483647",
+  "expected": "-2147483548"
+ },
+ {
+  "name": "cmd 8 acc 10",
+  "input": "8 10",
+  "expected": "111"
+ },
+ {
+  "name": "cmd 9 acc 4294967294",
+  "input": "9 4294967294",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 9 acc 2147483647",
+  "input": "9 2147483647",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 10 acc 123456789",
+  "input": "10 123456789",
+  "expected": "123456833"
+ },
+ {
+  "name": "cmd 10 acc 4294967295",
+  "input": "10 4294967295",
+  "expected": "-85"
+ },
+ {
+  "name": "cmd 11 acc 7",
+  "input": "11 7",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 11 acc 2147483648",
+  "input": "11 2147483648",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 12 acc 0",
+  "input": "12 0",
+  "expected": "1"
+ },
+ {
+  "name": "cmd 12 acc 4294967294",
+  "input": "12 4294967294",
+  "expected": "3"
+ },
+ {
+  "name": "cmd 13 acc 4294967295",
+  "input": "13 4294967295",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 13 acc 2",
+  "input": "13 2",
+  "expected": "4"
+ },
+ {
+  "name": "cmd 3 acc 2147483647",
+  "input": "3 2147483647",
+  "expected": "-2147483635"
+ },
+ {
+  "name": "cmd 3 acc 255",
+  "input": "3 255",
+  "expected": "781"
+ },
+ {
+  "name": "cmd 4 acc 2",
+  "input": "4 2",
+  "expected": "7"
+ },
+ {
+  "name": "cmd 4 acc 255",
+  "input": "4 255",
+  "expected": "766"
+ },
+ {
+  "name": "cmd 5 acc 7",
+  "input": "5 7",
+  "expected": "5"
+ },
+ {
+  "name": "cmd 5 acc 0",
+  "input": "5 0",
+  "expected": "-2"
+ },
+ {
+  "name": "cmd 6 acc 4294967295",
+  "input": "6 4294967295",
+  "expected": "-85"
+ },
+ {
+  "name": "cmd 6 acc 7",
+  "input": "6 7",
+  "expected": "83"
+ },
+ {
+  "name": "cmd 7 acc 1",
+  "input": "7 1",
+  "expected": "105"
+ },
+ {
+  "name": "cmd 7 acc 2147483648",
+  "input": "7 2147483648",
+  "expected": "101"
+ },
+ {
+  "name": "cmd 8 acc 4294967294",
+  "input": "8 4294967294",
+  "expected": "99"
+ },
+ {
+  "name": "cmd 8 acc 255",
+  "input": "8 255",
+  "expected": "356"
+ },
+ {
+  "name": "cmd 9 acc 4294967294",
+  "input": "9 4294967294",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 9 acc 85",
+  "input": "9 85",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 10 acc 1",
+  "input": "10 1",
+  "expected": "85"
+ },
+ {
+  "name": "cmd 10 acc 0",
+  "input": "10 0",
+  "expected": "86"
+ },
+ {
+  "name": "cmd 11 acc 0",
+  "input": "11 0",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 11 acc 4294967294",
+  "input": "11 4294967294",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 12 acc 2147483648",
+  "input": "12 2147483648",
+  "expected": "-2147483647"
+ },
+ {
+  "name": "cmd 12 acc 7",
+  "input": "12 7",
+  "expected": "-6"
+ },
+ {
+  "name": "cmd 13 acc 1",
+  "input": "13 1",
+  "expected": "2"
+ },
+ {
+  "name": "cmd 13 acc 85",
+  "input": "13 85",
+  "expected": "86"
+ },
+ {
+  "name": "cmd 3 acc 4066101455",
+  "input": "3 4066101455",
+  "expected": "-686597507"
+ },
+ {
+  "name": "cmd 3 acc 3503394736",
+  "input": "3 3503394736",
+  "expected": "1920249632"
+ },
+ {
+  "name": "cmd 3 acc 2559675864",
+  "input": "3 2559675864",
+  "expected": "-910906984"
+ },
+ {
+  "name": "cmd 4 acc 3119552549",
+  "input": "4 3119552549",
+  "expected": "768723056"
+ },
+ {
+  "name": "cmd 4 acc 4155204264",
+  "input": "4 4155204264",
+  "expected": "-419289095"
+ },
+ {
+  "name": "cmd 4 acc 2850123303",
+  "input": "4 2850123303",
+  "expected": "-39564682"
+ },
+ {
+  "name": "cmd 5 acc 2964019066",
+  "input": "5 2964019066",
+  "expected": "-1330948232"
+ },
+ {
+  "name": "cmd 5 acc 2893832251",
+  "input": "5 2893832251",
+  "expected": "-1401135047"
+ },
+ {
+  "name": "cmd 5 acc 488906454",
+  "input": "5 488906454",
+  "expected": "488906452"
+ },
+ {
+  "name": "cmd 6 acc 1009198888",
+  "input": "6 1009198888",
+  "expected": "1009198974"
+ },
+ {
+  "name": "cmd 6 acc 1560457728",
+  "input": "6 1560457728",
+  "expected": "1560457814"
+ },
+ {
+  "name": "cmd 6 acc 2147535712",
+  "input": "6 2147535712",
+  "expected": "-2147431626"
+ },
+ {
+  "name": "cmd 7 acc 120874424",
+  "input": "7 120874424",
+  "expected": "483497797"
+ },
+ {
+  "name": "cmd 7 acc 1847498978",
+  "input": "7 1847498978",
+  "expected": "-1199938579"
+ },
+ {
+  "name": "cmd 7 acc 2229076474",
+  "input": "7 2229076474",
+  "expected": "326371405"
+ },
+ {
+  "name": "cmd 8 acc 1834994968",
+  "input": "8 1834994968",
+  "expected": "1834995069"
+ },
+ {
+  "name": "cmd 8 acc 1667504401",
+  "input": "8 1667504401",
+  "expected": "1667504502"
+ },
+ {
+  "name": "cmd 8 acc 2362109041",
+  "input": "8 2362109041",
+  "expected": "-1932858154"
+ },
+ {
+  "name": "cmd 9 acc 764716920",
+  "input": "9 764716920",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 9 acc 2988848587",
+  "input": "9 2988848587",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 9 acc 158252740",
+  "input": "9 158252740",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 10 acc 1187763029",
+  "input": "10 1187763029",
+  "expected": "1187762945"
+ },
+ {
+  "name": "cmd 10 acc 1972515424",
+  "input": "10 1972515424",
+  "expected": "1972515382"
+ },
+ {
+  "name": "cmd 10 acc 896760975",
+  "input": "10 896760975",
+  "expected": "896761051"
+ },
+ {
+  "name": "cmd 11 acc 1210733218",
+  "input": "11 1210733218",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 11 acc 2065984535",
+  "input": "11 2065984535",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 11 acc 719677626",
+  "input": "11 719677626",
+  "expected": "0"
+ },
+ {
+  "name": "cmd 12 acc 1564196064",
+  "input": "12 1564196064",
+  "expected": "-1564196063"
+ },
+ {
+  "name": "cmd 12 acc 3214902317",
+  "input": "12 3214902317",
+  "expected": "1080064980"
+ },
+ {
+  "name": "cmd 12 acc 1467975751",
+  "input": "12 1467975751",
+  "expected": "-1467975750"
+ },
+ {
+  "name": "cmd 13 acc 171897246",
+  "input": "13 171897246",
+  "expected": "171897248"
+ },
+ {
+  "name": "cmd 13 acc 2658915887",
+  "input": "13 2658915887",
+  "expected": "-1636051408"
+ },
+ {
+  "name": "cmd 13 acc 4225453544",
+  "input": "13 4225453544",
+  "expected": "-69513750"
+ }
+]

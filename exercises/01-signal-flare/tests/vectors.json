@@ -1,0 +1,5 @@
+{
+  "stdout": "FLARE LAUNCHED\nCOLOR: RED\nALTITUDE: 120 m\n",
+  "stderr": "[flare] burn time 30 s\n",
+  "exit_status": 7
+}

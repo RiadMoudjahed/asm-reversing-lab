@@ -1,0 +1,72 @@
+[
+  {
+    "name": "be32 small",
+    "input": "be32 00 00 00 01",
+    "expected": "1"
+  },
+  {
+    "name": "be32 byte order",
+    "input": "be32 12 34 56 78",
+    "expected": "305419896"
+  },
+  {
+    "name": "be32 high bit",
+    "input": "be32 80 00 00 00",
+    "expected": "2147483648"
+  },
+  {
+    "name": "be32 all ones",
+    "input": "be32 ff ff ff ff",
+    "expected": "4294967295"
+  },
+  {
+    "name": "be32 mixed",
+    "input": "be32 de ad be ef",
+    "expected": "3735928559"
+  },
+  {
+    "name": "le16 small",
+    "input": "le16 01 00",
+    "expected": "1"
+  },
+  {
+    "name": "le16 byte order",
+    "input": "le16 34 12",
+    "expected": "4660"
+  },
+  {
+    "name": "le16 high bit",
+    "input": "le16 00 80",
+    "expected": "32768"
+  },
+  {
+    "name": "le16 all ones",
+    "input": "le16 ff ff",
+    "expected": "65535"
+  },
+  {
+    "name": "record from Part 1",
+    "input": "rec 00 03 00 07 fb 20 80 01 c8 af 00 00",
+    "expected": "196615 8443 32769 45000"
+  },
+  {
+    "name": "record zeros",
+    "input": "rec 00 00 00 00 00 00 00 00 00 00 00 00",
+    "expected": "0 0 0 0"
+  },
+  {
+    "name": "record all ones",
+    "input": "rec ff ff ff ff ff ff ff ff ff ff ff ff",
+    "expected": "4294967295 65535 65535 4294967295"
+  },
+  {
+    "name": "record distinct bytes",
+    "input": "rec 01 02 03 04 05 06 07 08 09 0a 0b 0c",
+    "expected": "16909060 1541 1800 202050057"
+  },
+  {
+    "name": "record high bits",
+    "input": "rec 80 00 00 01 00 80 80 00 00 00 00 80",
+    "expected": "2147483649 32768 32768 2147483648"
+  }
+]

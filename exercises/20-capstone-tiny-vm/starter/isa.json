@@ -1,0 +1,26 @@
+{
+  "register_a": "?",
+  "immediate": "?",
+  "opcodes": {
+    "movi": {"code": null, "length": null},
+    "mov": {"code": null, "length": null},
+    "add": {"code": null, "length": null},
+    "sub": {"code": null, "length": null},
+    "mul": {"code": null, "length": null},
+    "xor": {"code": null, "length": null},
+    "and": {"code": null, "length": null},
+    "shl": {"code": null, "length": null},
+    "shr": {"code": null, "length": null},
+    "cmp": {"code": null, "length": null},
+    "jmp": {"code": null, "length": null},
+    "jz": {"code": null, "length": null},
+    "jnz": {"code": null, "length": null},
+    "call": {"code": null, "length": null},
+    "ret": {"code": null, "length": null},
+    "ldb": {"code": null, "length": null},
+    "stb": {"code": null, "length": null},
+    "out": {"code": null, "length": null},
+    "outc": {"code": null, "length": null},
+    "halt": {"code": null, "length": null}
+  }
+}
