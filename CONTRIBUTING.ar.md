@@ -1,6 +1,8 @@
 <!-- source: CONTRIBUTING.md @ sha256:1e4e4a084d48 -->
+<div align="center">
+  
 [English](CONTRIBUTING.md) | [العربية](CONTRIBUTING.ar.md) | [Deutsch](CONTRIBUTING.de.md) | [Español](CONTRIBUTING.es.md) | [Français](CONTRIBUTING.fr.md)
-
+</div>  
 <div dir="rtl">
 
 # المساهمة
